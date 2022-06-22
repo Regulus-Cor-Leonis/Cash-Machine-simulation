@@ -10,13 +10,13 @@ CONFIG += c++17
 
 SOURCES += \
     cash.cpp \
-    cash_withdrawal.cpp \
+    cashwithdrawal.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     cash.h \
-    cash_withdrawal.h \
+    cashwithdrawal.h \
     mainwindow.h
 
 FORMS += \
