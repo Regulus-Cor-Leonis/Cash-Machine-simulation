@@ -27,24 +27,22 @@ QList<Cash> DB::getBillsFromDB()
     return cash;
 }
 
-void DB::insertBillsIntoDB(QList<Cash> newCash)
+void DB::insertBillsIntoDB(QList<Cash> &newCash)
 {
     QList<Cash> oldCash = getBillsFromDB();
     QSqlQuery qry;
     int value, count;
-    for (int i = 0; i < newCash.length(); i++){
-        for (int j = 0; j < oldCash.length(); j++){
+    for (int i = 0; i < newCash.length(); ++i){
+        for (int j = 0; j < oldCash.length(); ++j){
+            value = newCash[i].get_denomination();
+            count = newCash[i].get_count();
             if (newCash[i].get_denomination() == oldCash[j].get_denomination()){
-                value = newCash[i].get_denomination();
-                count = newCash[i].get_count();
                 qry.prepare("UPDATE Bill SET count = count + :count WHERE value = :value");
                 qry.bindValue(":value", value);
                 qry.bindValue(":count", count);
                 qry.exec();
             }
             else {
-                value = newCash[i].get_denomination();
-                count = newCash[i].get_count();
                 qry.prepare("INSERT INTO Bill (value, count) VALUES (:value, :count)");
                 qry.bindValue(":value", value);
                 qry.bindValue(":count", count);
@@ -55,11 +53,11 @@ void DB::insertBillsIntoDB(QList<Cash> newCash)
 
 }
 
-void DB::withdrawBillsFromDB(QList<Cash> withdrawCash)
+void DB::withdrawBillsFromDB(QList<Cash> &withdrawCash)
 {
     QSqlQuery qry;
     int value, count;
-    for (int i = 0; i < withdrawCash.length(); i++){
+    for (int i = 0; i < withdrawCash.length(); ++i){
         value = withdrawCash[i].get_denomination();
         count = withdrawCash[i].get_count();
         qry.prepare("UPDATE Bill SET count = count - :count WHERE value = :value");

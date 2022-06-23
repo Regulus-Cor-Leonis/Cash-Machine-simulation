@@ -14,8 +14,8 @@ public:
 
     void dbConnect(QString hostName, QString databaseName);
     QList<Cash> getBillsFromDB();
-    void insertBillsIntoDB(QList<Cash> cash);
-    void withdrawBillsFromDB(QList<Cash> withdrawCash);
+    void insertBillsIntoDB(QList<Cash> &newCash);
+    void withdrawBillsFromDB(QList<Cash> &withdrawCash);
 
 };
 
