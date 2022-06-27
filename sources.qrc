@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>sources/Dragons.jpg</file>
+        <file>sources/BackImage.png</file>
+        <file>sources/Back.png</file>
+        <file>sources/CashIcon.png</file>
+        <file>sources/AdminPanelIcon.png</file>
+        <file>sources/ExitIcon.png</file>
+        <file>sources/Clock.png</file>
+        <file>sources/Hryvnia.png</file>
+        <file>sources/Money.png</file>
+        <file>sources/Add.png</file>
+        <file>sources/ConfigurationFile.png</file>
+        <file>sources/Console.png</file>
+        <file>sources/Database.png</file>
+        <file>sources/Delete.png</file>
+        <file>sources/Update.png</file>
+        <file>sources/Okay.png</file>
+        <file>sources/No.png</file>
+        <file>sources/Yes.png</file>
+    </qresource>
+</RCC>
