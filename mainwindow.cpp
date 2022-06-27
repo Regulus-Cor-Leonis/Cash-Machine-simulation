@@ -31,7 +31,6 @@ void MainWindow::showTime()
     QTime time = QTime::currentTime();
     QString timeText = time.toString("hh : mm : ss");
     ui->label_3->setText(timeText);
->>>>>>> ui_branch
 }
 
 MainWindow::~MainWindow()

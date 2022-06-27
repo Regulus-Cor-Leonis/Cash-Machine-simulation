@@ -55,7 +55,6 @@ int main(int argc, char *argv[])
         ptr[i-1].set_denomination(value.left(pos).toInt());
         ptr[i-1].set_count(value.mid(pos+1).toInt());
     }
-    MainWindow w;
     Cash_withdrawal ATM(ptr, argc-1);
     for (int i=0;i<ATM.get_cnt();i++){
         std::cout <<ATM.get_money()[i].get_denomination()<< std::endl;
