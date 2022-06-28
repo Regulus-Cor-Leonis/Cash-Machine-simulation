@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QDateTime>
+#include "db.h"
 
 namespace Ui {
 class AdminPanel;
@@ -22,6 +23,8 @@ private:
 
 private slots:
     void showTime();
+    void on_pushButton_3_clicked();
+    void on_pushButton_4_clicked();
 };
 
 #endif // ADMINPANEL_H
