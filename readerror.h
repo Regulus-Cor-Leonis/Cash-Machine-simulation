@@ -15,6 +15,9 @@ public:
     explicit ReadError(QWidget *parent = nullptr);
     ~ReadError();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::ReadError *ui;
 };

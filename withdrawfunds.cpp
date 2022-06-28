@@ -1,5 +1,6 @@
 #include "withdrawfunds.h"
 #include "ui_withdrawfunds.h"
+#include "readerror.h"
 
 
 WithdrawFunds::WithdrawFunds(QWidget *parent) :
@@ -10,6 +11,7 @@ WithdrawFunds::WithdrawFunds(QWidget *parent) :
     count = 0;
 
     ui->lineEdit->setPlaceholderText("Enter amount to withdraw");
+    ui->lineEdit->setMaxLength(18);
 
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(showTime()));
@@ -210,6 +212,52 @@ void WithdrawFunds::animationButton()
         }
 }
 
+void issuance();
+
+void WithdrawFunds::on_pushButton_7_clicked()
+{
+    bool ok;
+    long long int request=ui->lineEdit->text().toLongLong(&ok,10);
+    if (ok==false){
+        ReadError *w=new ReadError;
+        w->show();
+        ui->lineEdit->setText("");
+    }
+    else{
+        qDebug()<<request<<"\n";
+    }
+}
+
 void WithdrawFunds::on_pushButton_2_clicked()
 {
+    int request=50;
+    qDebug()<<request<<"\n";
 }
+
+void WithdrawFunds::on_pushButton_3_clicked()
+{
+    int request=100;
+    qDebug()<<request<<"\n";
+}
+
+
+void WithdrawFunds::on_pushButton_4_clicked()
+{
+    int request=200;
+    qDebug()<<request<<"\n";
+}
+
+
+void WithdrawFunds::on_pushButton_5_clicked()
+{
+    int request=500;
+    qDebug()<<request<<"\n";
+}
+
+
+void WithdrawFunds::on_pushButton_6_clicked()
+{
+    int request=1000;
+    qDebug()<<request<<"\n";
+}
+

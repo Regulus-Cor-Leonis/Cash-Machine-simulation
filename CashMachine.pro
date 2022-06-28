@@ -1,8 +1,9 @@
 QT       += core gui
+QT += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
+CONFIG += c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -10,6 +11,9 @@ CONFIG += c++11
 
 SOURCES += \
     adminpanel.cpp \
+    cash.cpp \
+    cashwithdrawal.cpp \
+    db.cpp \
     errorpassword.cpp \
     exceedingwithdrawalamount.cpp \
     exitmessage.cpp \
@@ -27,6 +31,9 @@ SOURCES += \
 
 HEADERS += \
     adminpanel.h \
+    cash.h \
+    cashwithdrawal.h \
+    db.h \
     errorpassword.h \
     exceedingwithdrawalamount.h \
     exitmessage.h \
@@ -56,6 +63,7 @@ FORMS += \
     successfulupdate.ui \
     successfulwithdraw.ui \
     withdrawfunds.ui
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
