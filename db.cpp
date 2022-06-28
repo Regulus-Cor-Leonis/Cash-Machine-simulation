@@ -49,6 +49,15 @@ QSqlQueryModel *DB::getBillsModelFromDB()
     return model;
 }
 
+void DB::deleteBillsFromDB(const int &billValue)
+{
+    QSqlQuery qry;
+    qry.prepare("DELETE FROM Bill WHERE value = :value");
+    qry.bindValue(":value", billValue);
+    qry.exec();
+
+}
+
 void DB::insertBillsIntoDB(Cash &newCash)
 {
     QList<Cash> oldCash = getBillsFromDB();
@@ -85,6 +94,33 @@ void DB::withdrawBillsFromDB(QList<Cash> &withdrawCash)
         value = withdrawCash[i].get_denomination();
         count = withdrawCash[i].get_count();
         qry.prepare("UPDATE Bill SET count = count - :count WHERE value = :value");
+        qry.bindValue(":value", value);
+        qry.bindValue(":count", count);
+        qry.exec();
+    }
+}
+
+void DB::updateBillsInDB(Cash &newCash)
+{
+    QList<Cash> oldCash = getBillsFromDB();
+    QSqlQuery qry;
+    int value = newCash.get_denomination();
+    int count = newCash.get_count();
+    bool flag = false;
+    for (int i = 0; i < oldCash.length(); ++i){
+        if (newCash.get_denomination() == oldCash[i].get_denomination()){
+            flag = true;
+            break;
+        }
+    }
+    if (flag){
+        qry.prepare("UPDATE Bill SET count = :count WHERE value = :value");
+        qry.bindValue(":value", value);
+        qry.bindValue(":count", count);
+        qry.exec();
+    }
+    else {
+        qry.prepare("INSERT INTO Bill (value, count) VALUES (:value, :count)");
         qry.bindValue(":value", value);
         qry.bindValue(":count", count);
         qry.exec();
