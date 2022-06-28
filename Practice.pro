@@ -12,7 +12,7 @@ CONFIG += c++17
 SOURCES += \
     adminpanel.cpp \
     cash.cpp \
-    cash_withdrawal.cpp \
+    cashwithdrawal.cpp \
     db.cpp \
     errorpassword.cpp \
     exceedingwithdrawalamount.cpp \
@@ -32,7 +32,7 @@ SOURCES += \
 HEADERS += \
     adminpanel.h \
     cash.h \
-    cash_withdrawal.h \
+    cashwithdrawal.h \
     db.h \
     errorpassword.h \
     exceedingwithdrawalamount.h \

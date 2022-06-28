@@ -43,8 +43,8 @@ void AdminPanel::on_pushButton_3_clicked()
     if (ui->lineEdit->text() != "" && ui->lineEdit_2->text() != ""){
         DB* db = DB::getInstance();
         Cash cash;
-        cash.set_denomination(ui->lineEdit->text().toInt());
-        cash.set_count(ui->lineEdit_2->text().toInt());
+        cash.setDenomination(ui->lineEdit->text().toInt());
+        cash.setCount(ui->lineEdit_2->text().toInt());
         db->insertBillsIntoDB(cash);
         ui->tableView->setModel(db->getBillsModelFromDB());
     }
@@ -56,8 +56,8 @@ void AdminPanel::on_pushButton_4_clicked()
     if (ui->lineEdit->text() != "" && ui->lineEdit_2->text() != ""){
         DB* db = DB::getInstance();
         Cash cash;
-        cash.set_denomination(ui->lineEdit->text().toInt());
-        cash.set_count(ui->lineEdit_2->text().toInt());
+        cash.setDenomination(ui->lineEdit->text().toInt());
+        cash.setCount(ui->lineEdit_2->text().toInt());
         db->updateBillsInDB(cash);
         ui->tableView->setModel(db->getBillsModelFromDB());
     }
