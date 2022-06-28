@@ -2,6 +2,8 @@
 #include <QDebug>
 #include <QSqlQuery>
 
+DB *DB::instance = nullptr;
+
 void DB::dbConnect(QString hostName, QString databaseName){
     db = QSqlDatabase::addDatabase("QODBC");
     db.setDatabaseName(QString("DRIVER={SQL Server};"
@@ -9,6 +11,16 @@ void DB::dbConnect(QString hostName, QString databaseName){
               .arg(hostName, databaseName));
     if (!db.open())
         qDebug() << "can't connect to db";
+}
+
+
+DB *DB::getInstance()
+{
+    if (instance == nullptr){
+        instance = new DB();
+        instance->dbConnect("DESKTOP-ONV4O98", "CashMachine");
+    }
+    return instance;
 }
 
 
@@ -27,28 +39,40 @@ QList<Cash> DB::getBillsFromDB()
     return cash;
 }
 
-void DB::insertBillsIntoDB(QList<Cash> &newCash)
+QSqlQueryModel *DB::getBillsModelFromDB()
+{
+    QSqlQuery qry;
+    QSqlQueryModel *model = new QSqlQueryModel();
+    qry.prepare("SELECT value, count from Bill");
+    qry.exec();
+    model->setQuery(std::move(qry));
+    return model;
+}
+
+void DB::insertBillsIntoDB(Cash &newCash)
 {
     QList<Cash> oldCash = getBillsFromDB();
     QSqlQuery qry;
-    int value, count;
-    for (int i = 0; i < newCash.length(); ++i){
-        for (int j = 0; j < oldCash.length(); ++j){
-            value = newCash[i].getDenomination();
-            count = newCash[i].getCount();
-            if (newCash[i].getDenomination() == oldCash[j].getDenomination()){
-                qry.prepare("UPDATE Bill SET count = count + :count WHERE value = :value");
-                qry.bindValue(":value", value);
-                qry.bindValue(":count", count);
-                qry.exec();
-            }
-            else {
-                qry.prepare("INSERT INTO Bill (value, count) VALUES (:value, :count)");
-                qry.bindValue(":value", value);
-                qry.bindValue(":count", count);
-                qry.exec();
-            }
+    int value = newCash.getDenomination();
+    int count = newCash.getCount();
+    bool flag = false;
+    for (int i = 0; i < oldCash.length(); ++i){
+        if (newCash.getDenomination() == oldCash[i].getDenomination()){
+            flag = true;
+            break;
         }
+    }
+    if (flag){
+        qry.prepare("UPDATE Bill SET count = count + :count WHERE value = :value");
+        qry.bindValue(":value", value);
+        qry.bindValue(":count", count);
+        qry.exec();
+    }
+    else {
+        qry.prepare("INSERT INTO Bill (value, count) VALUES (:value, :count)");
+        qry.bindValue(":value", value);
+        qry.bindValue(":count", count);
+        qry.exec();
     }
 
 }
