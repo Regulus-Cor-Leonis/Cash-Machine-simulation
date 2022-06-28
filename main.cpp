@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "cash.h"
-#include "cash_withdrawal.h"
+#include "cashwithdrawal.h"
 #include <iostream>
 #include <QApplication>
 #include <QDebug>
@@ -32,8 +32,8 @@ QList<Cash> readJson(QString fileName){
             Cash bill;
             while (i.hasNext()){
                 i.next();
-                bill.set_denomination(i.key().toUInt());
-                bill.set_count(i.value().toUInt());
+                bill.setDenomination(i.key().toUInt());
+                bill.setCount(i.value().toUInt());
                 cash.append(bill);
             }
             return cash;
@@ -50,24 +50,32 @@ QList<Cash> readJson(QString fileName){
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Cash* ptr= new Cash[(argc-1)];
-    for (int i = 1; i < argc; i++) {
-        QString value=QString(argv[i]);
-        int pos=value.indexOf('=');
-        ptr[i-1].set_denomination(value.left(pos).toInt());
-        ptr[i-1].set_count(value.mid(pos+1).toInt());
+    qDebug()<<argc;
+    if (argc==1) {
+        qDebug()<<"No arguments in command line";
+        MainWindow w;
+        w.show();
+        return a.exec();
     }
-    Cash_withdrawal ATM(ptr, argc-1);
-    for (int i=0;i<ATM.get_cnt();i++){
-        std::cout <<ATM.get_money()[i].get_denomination()<< std::endl;
-        std::cout <<ATM.get_money()[i].get_count()<< std::endl;
+    else{
+        Cash* ptr= new Cash[(argc-1)];
+        for (int i = 1; i < argc; i++) {
+            QString value=QString(argv[i]);
+            int pos=value.indexOf('=');
+            ptr[i-1].setDenomination(value.left(pos).toInt());
+            ptr[i-1].setCount(value.mid(pos+1).toInt());
+        }
+        CashWithdrawal* ATM=new CashWithdrawal(ptr, argc-1);
+            /*for (int i=0;i<ATM->getCnt();i++){
+                std::cout <<ATM->getMoney()[i].getDenomination()<< std::endl;
+                std::cout <<ATM->getMoney()[i].getCount()<< std::endl;
+            }*/
+        issuance(ATM,500);
     }
-    ATM.issuance(100000000);
     //delete[](ptr);
 
-    readJson(QCoreApplication::applicationDirPath() + "/../../Cash-Machine-simulation/cash_machine_conf.json");
-    
-    MainWindow w;
+    //readJson(QCoreApplication::applicationDirPath() + "/../../Cash-Machine-simulation/cash_machine_conf.json");
+    /*MainWindow w;
     w.show();
-    return a.exec();
+    return a.exec();*/
 }

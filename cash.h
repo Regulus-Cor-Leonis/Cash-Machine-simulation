@@ -8,10 +8,10 @@ class Cash
     int count;
 public:
     Cash();
-    void set_denomination(int value){this->denomination=value;}
-    void set_count(int value){this->count=value;}
-    int get_denomination() {return this->denomination;}
-    int get_count(){return this->count;}
+    void setDenomination(int value){this->denomination=value;}
+    void setCount(int value){this->count=value;}
+    int getDenomination() {return this->denomination;}
+    int getCount(){return this->count;}
 };
 
 

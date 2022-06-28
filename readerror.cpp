@@ -12,3 +12,9 @@ ReadError::~ReadError()
 {
     delete ui;
 }
+
+void ReadError::on_pushButton_2_clicked()
+{
+    this->close();
+}
+

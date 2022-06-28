@@ -32,8 +32,8 @@ QList<Cash> DB::getBillsFromDB()
     qry.prepare("SELECT value, count from Bill");
     qry.exec();
     while (qry.next()) {
-        bill.set_count(qry.value(0).toInt());
-        bill.set_denomination(qry.value(1).toInt());
+        bill.setCount(qry.value(0).toInt());
+        bill.setDenomination(qry.value(1).toInt());
         cash.append(bill);
     }
     return cash;
@@ -62,11 +62,11 @@ void DB::insertBillsIntoDB(Cash &newCash)
 {
     QList<Cash> oldCash = getBillsFromDB();
     QSqlQuery qry;
-    int value = newCash.get_denomination();
-    int count = newCash.get_count();
+    int value = newCash.getDenomination();
+    int count = newCash.getCount();
     bool flag = false;
     for (int i = 0; i < oldCash.length(); ++i){
-        if (newCash.get_denomination() == oldCash[i].get_denomination()){
+        if (newCash.getDenomination() == oldCash[i].getDenomination()){
             flag = true;
             break;
         }
@@ -91,8 +91,8 @@ void DB::withdrawBillsFromDB(QList<Cash> &withdrawCash)
     QSqlQuery qry;
     int value, count;
     for (int i = 0; i < withdrawCash.length(); ++i){
-        value = withdrawCash[i].get_denomination();
-        count = withdrawCash[i].get_count();
+        value = withdrawCash[i].getDenomination();
+        count = withdrawCash[i].getCount();
         qry.prepare("UPDATE Bill SET count = count - :count WHERE value = :value");
         qry.bindValue(":value", value);
         qry.bindValue(":count", count);
