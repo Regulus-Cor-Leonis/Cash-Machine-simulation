@@ -9,7 +9,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
-void readJson(QString fileName){
+QList<Cash> readJson(QString fileName){
     QFile file;
     file.setFileName(fileName);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
@@ -20,7 +20,7 @@ void readJson(QString fileName){
         if( jsonError.error != QJsonParseError::NoError )
         {
             qDebug() << "Can't open";
-            return;
+            return QList<Cash>();
         }
         if( document.isObject() )
         {
@@ -36,12 +36,14 @@ void readJson(QString fileName){
                 bill.setCount(i.value().toUInt());
                 cash.append(bill);
             }
+            return cash;
         }
 
     }
     else {
         qDebug() << "Can't open";
     }
+    return QList<Cash>();
 }
 
 

@@ -20,6 +20,10 @@ AdminPanel::AdminPanel(QWidget *parent) :
 
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
+    DB* db = DB::getInstance();
+    ui->tableView->setModel(db->getBillsModelFromDB());
+
+
 }
 
 AdminPanel::~AdminPanel()
@@ -36,19 +40,52 @@ void AdminPanel::showTime()
 
 void AdminPanel::on_pushButton_3_clicked()
 {
-    DB* db = DB::getInstance();
     if (ui->lineEdit->text() != "" && ui->lineEdit_2->text() != ""){
+        DB* db = DB::getInstance();
         Cash cash;
         cash.setDenomination(ui->lineEdit->text().toInt());
         cash.setCount(ui->lineEdit_2->text().toInt());
         db->insertBillsIntoDB(cash);
+        ui->tableView->setModel(db->getBillsModelFromDB());
     }
 }
 
 
 void AdminPanel::on_pushButton_4_clicked()
 {
-    DB* db = DB::getInstance();
-    ui->tableView->setModel(db->getBillsModelFromDB());
+    if (ui->lineEdit->text() != "" && ui->lineEdit_2->text() != ""){
+        DB* db = DB::getInstance();
+        Cash cash;
+        cash.setDenomination(ui->lineEdit->text().toInt());
+        cash.setCount(ui->lineEdit_2->text().toInt());
+        db->updateBillsInDB(cash);
+        ui->tableView->setModel(db->getBillsModelFromDB());
+    }
+}
+
+
+void AdminPanel::on_pushButton_5_clicked()
+{
+    QItemSelectionModel *select = ui->tableView->selectionModel();
+    if (select->hasSelection()){
+        DB* db = DB::getInstance();
+        int rowIndex = select->selectedIndexes().begin()->row();
+        const uint bill = ui->tableView->model()->index(rowIndex, 0).data().toUInt();
+        db->deleteBillsFromDB(bill);
+        ui->tableView->setModel(db->getBillsModelFromDB());
+    }
+}
+
+
+void AdminPanel::on_tableView_clicked(const QModelIndex &index)
+{
+    if (index.column() == 0){
+    ui->lineEdit->setText(ui->tableView->model()->data(index).toString());
+    ui->lineEdit_2->setText(ui->tableView->model()->data(index.siblingAtColumn(1)).toString());
+    }
+    else if (index.column() == 1){
+        ui->lineEdit->setText(ui->tableView->model()->data(index.siblingAtColumn(0)).toString());
+        ui->lineEdit_2->setText(ui->tableView->model()->data(index).toString());
+    }
 }
 
