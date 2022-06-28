@@ -16,7 +16,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(showTime()));
     timer->start();
@@ -47,6 +46,7 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     WithdrawFunds *w = new WithdrawFunds;
+    w->setATM(ATM);
     w->show();
     this->close();
 }
@@ -54,6 +54,7 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_pushButton_3_clicked()
 {
     AdminPanel *w = new AdminPanel;
+    w->setATM(ATM);
     w->show();
     this->close();
 }

@@ -212,7 +212,93 @@ void WithdrawFunds::animationButton()
         }
 }
 
-void issuance();
+bool minCountOfBills(CashWithdrawal *atm,int request)
+{
+    int sum=atm->getSum();
+    if (sum<request){
+        qDebug()<<"Not enough funds at the ATM";
+        return false;
+    } else {
+        const int INF=1000000000;
+        int *F=new int[request+1];
+        F[0] = 0;
+        int m, i;
+        for (m = 1; m <= request; ++m)
+        {
+            F[m] = INF;
+            for (i = 0; i < atm->getCnt(); ++i)
+            {
+                if (atm->getMoney()[i].getCount()>0)
+                    if (m >= atm->getMoney()[i].getDenomination() && F[m - atm->getMoney()[i].getDenomination()] + 1 < F[m])
+                        F[m] = F[m - atm->getMoney()[i].getDenomination()] + 1;
+            }
+        }
+        qDebug() << "Result: "<<F[request] ;
+
+        if (F[request] == INF)
+            return false;
+        else
+        {
+            int *denomination=new int[atm->getCnt()];
+            for(int i=0;i<atm->getCnt();i++){
+                denomination[i]=atm->getMoney()[i].getDenomination();
+            }
+            int *count=new int[atm->getCnt()];
+            for(int i=0;i<atm->getCnt();i++){
+                count[i]=0;
+            }
+            int suma=0;
+            while (request > 0)
+            {
+                for (i = 0; i < atm->getCnt(); ++i)
+                {
+                    if (F[request - atm->getMoney()[i].getDenomination()] == F[request] - 1)
+                    {
+                        //qDebug() << atm->getMoney()[i].getDenomination() << " ";
+                        for(int j=0;j<atm->getCnt();j++){
+                            if (atm->getMoney()[i].getDenomination()==denomination[j]) count[j]++;
+                        }
+                        request -= atm->getMoney()[i].getDenomination();
+                        break;
+                    }
+                }
+            }
+            for(int i=0;i<atm->getCnt();i++){
+                //qDebug()<<count[i]<<" ";
+            }
+            for(int i=0;i<atm->getCnt();i++){
+                //qDebug()<<atm->getMoney()[i].getCount()<<" "<<count[i];
+                if (atm->getMoney()[i].getCount()<count[i]){
+                    suma+=(count[i]-atm->getMoney()[i].getCount())*atm->getMoney()[i].getDenomination();
+                    atm->getMoney()[i].setCount(0);
+                } else {
+                    atm->getMoney()[i].setCount(atm->getMoney()[i].getCount()-count[i]);
+                }
+            }
+            if (suma==0) return true;
+            minCountOfBills(atm,suma);
+        }
+    }
+}
+
+void issuance(CashWithdrawal* ATM, int request){
+    if (ATM->getCnt()==0){
+        //тут підтягуємо дані з бд
+    } else{
+        qDebug()<<request;
+        int sum=ATM->getSum();
+        qDebug()<<sum;
+        if (sum<request){
+            qDebug()<<"Not enough funds at the ATM ";
+            return;
+        } else {
+            for(int i=0;i<ATM->getCnt();++i){
+                qDebug()<<ATM->getMoney()[i].getDenomination()<<" ";
+            }
+            if (minCountOfBills(ATM,request)) qDebug()<<"Success";
+        }
+    }
+}
 
 void WithdrawFunds::on_pushButton_7_clicked()
 {
@@ -224,40 +310,50 @@ void WithdrawFunds::on_pushButton_7_clicked()
         ui->lineEdit->setText("");
     }
     else{
-        qDebug()<<request<<"\n";
+        //qDebug()<<request<<"\n";
+        //qDebug()<<ATM->getCnt();
+        //issuance(ATM,request);
+        /*for(int i=0;i<ATM->getCnt();++i){
+            qDebug()<<ATM->getMoney()[i].getCount()<<" Space "<<ATM->getMoney()[i].getDenomination();
+        }*/
     }
 }
 
 void WithdrawFunds::on_pushButton_2_clicked()
 {
     int request=50;
-    qDebug()<<request<<"\n";
+    /*qDebug()<<request<<"\n";
+    issuance(ATM,request);*/
 }
 
 void WithdrawFunds::on_pushButton_3_clicked()
 {
     int request=100;
-    qDebug()<<request<<"\n";
+    /*qDebug()<<request<<"\n";
+    issuance(ATM,request);*/
 }
 
 
 void WithdrawFunds::on_pushButton_4_clicked()
 {
     int request=200;
-    qDebug()<<request<<"\n";
+    /*qDebug()<<request<<"\n";
+    issuance(ATM,request);*/
 }
 
 
 void WithdrawFunds::on_pushButton_5_clicked()
 {
     int request=500;
-    qDebug()<<request<<"\n";
+    /*qDebug()<<request<<"\n";
+    issuance(ATM,request);*/
 }
 
 
 void WithdrawFunds::on_pushButton_6_clicked()
 {
     int request=1000;
-    qDebug()<<request<<"\n";
+    /*qDebug()<<request<<"\n";
+    issuance(ATM,request);*/
 }
 

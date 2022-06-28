@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <QDateTime>
 #include "db.h"
+#include "cashwithdrawal.h"
 
 namespace Ui {
 class AdminPanel;
@@ -13,10 +14,13 @@ class AdminPanel;
 class AdminPanel : public QMainWindow
 {
     Q_OBJECT
+    CashWithdrawal* ATM;
 
 public:
     explicit AdminPanel(QWidget *parent = nullptr);
     ~AdminPanel();
+    void setATM(CashWithdrawal* atm){this->ATM=atm;}
+    CashWithdrawal* getATM(){return this->ATM;}
 
 private:
     Ui::AdminPanel *ui;

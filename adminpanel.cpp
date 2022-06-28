@@ -39,8 +39,8 @@ void AdminPanel::on_pushButton_3_clicked()
     DB* db = DB::getInstance();
     if (ui->lineEdit->text() != "" && ui->lineEdit_2->text() != ""){
         Cash cash;
-        cash.set_denomination(ui->lineEdit->text().toInt());
-        cash.set_count(ui->lineEdit_2->text().toInt());
+        cash.setDenomination(ui->lineEdit->text().toInt());
+        cash.setCount(ui->lineEdit_2->text().toInt());
         db->insertBillsIntoDB(cash);
     }
 }

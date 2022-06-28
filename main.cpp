@@ -48,7 +48,7 @@ void readJson(QString fileName){
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    qDebug()<<argc;
+    //qDebug()<<argc;
     if (argc==1) {
         qDebug()<<"No arguments in command line";
         MainWindow w;
@@ -68,11 +68,16 @@ int main(int argc, char *argv[])
                 std::cout <<ATM->getMoney()[i].getDenomination()<< std::endl;
                 std::cout <<ATM->getMoney()[i].getCount()<< std::endl;
             }*/
-        issuance(ATM,500);
+        //(ATM,500);
+        MainWindow w;
+        w.setATM(ATM);
+        w.show();
+        return a.exec();
     }
     //delete[](ptr);
 
     //readJson(QCoreApplication::applicationDirPath() + "/../../Cash-Machine-simulation/cash_machine_conf.json");
+
     /*MainWindow w;
     w.show();
     return a.exec();*/
