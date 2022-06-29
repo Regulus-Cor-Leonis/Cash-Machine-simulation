@@ -18,5 +18,6 @@
         <file>sources/Okay.png</file>
         <file>sources/No.png</file>
         <file>sources/Yes.png</file>
+        <file>sources/BackA.png</file>
     </qresource>
 </RCC>

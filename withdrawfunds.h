@@ -10,6 +10,7 @@
 #include <QTimer>
 #include <QThread>
 #include <QDateTime>
+#include <QDebug>
 
 namespace Ui {
 class WithdrawFunds;
