@@ -15,6 +15,11 @@ public:
     explicit Password(QWidget *parent = nullptr);
     ~Password();
 
+private slots:
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
 private:
     Ui::Password *ui;
 };
