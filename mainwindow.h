@@ -13,13 +13,13 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-    CashWithdrawal *ATM;
+    QList<Cash> ATM;
 
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void setATM(CashWithdrawal* atm){this->ATM=atm;}
-    CashWithdrawal* getATM(){return this->ATM;}
+    void setATM(QList<Cash> atm){this->ATM=atm;}
+    QList<Cash> getATM(){return this->ATM;}
 
 private slots:
     void on_pushButton_clicked();

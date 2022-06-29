@@ -11,6 +11,7 @@
 #include <QThread>
 #include <QDateTime>
 #include "cashwithdrawal.h"
+#include <QDebug>
 
 namespace Ui {
 class WithdrawFunds;
@@ -19,14 +20,14 @@ class WithdrawFunds;
 class WithdrawFunds : public QMainWindow
 {
     Q_OBJECT
-    CashWithdrawal* ATM;
+    QList<Cash> ATM;
 
 public:
     explicit WithdrawFunds(QWidget *parent = nullptr);
     ~WithdrawFunds();
-    void setATM(CashWithdrawal* atm){this->ATM=atm;}
-    CashWithdrawal* getATM(){return this->ATM;}
-    void minCountOfBills(CashWithdrawal*,int);
+    void setATM(QList<Cash> atm){this->ATM=atm;}
+    QList<Cash> getATM(){return this->ATM;}
+    void minCountOfBills(QList<Cash>,int);
 
 private:
     Ui::WithdrawFunds *ui;
@@ -42,6 +43,7 @@ private slots:
     void on_pushButton_4_clicked();
     void on_pushButton_5_clicked();
     void on_pushButton_6_clicked();
+    void on_pushButton_8_clicked();
 };
 
 #endif // WITHDRAWFUNDS_H

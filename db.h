@@ -21,8 +21,10 @@ public:
 
     QList<Cash> getBillsFromDB();
     QSqlQueryModel *getBillsModelFromDB();
+    void deleteBillsFromDB(const int &billValue);
     void insertBillsIntoDB(Cash &newCash);
     void withdrawBillsFromDB(QList<Cash> &withdrawCash);
+    void updateBillsInDB(Cash &newCash);
 
 };
 

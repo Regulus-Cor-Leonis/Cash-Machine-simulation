@@ -15,6 +15,9 @@ public:
     explicit SuccessfulWithdraw(QWidget *parent = nullptr);
     ~SuccessfulWithdraw();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::SuccessfulWithdraw *ui;
 };

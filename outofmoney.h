@@ -15,6 +15,9 @@ public:
     explicit OutOfMoney(QWidget *parent = nullptr);
     ~OutOfMoney();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::OutOfMoney *ui;
 };
