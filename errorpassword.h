@@ -15,6 +15,9 @@ public:
     explicit ErrorPassword(QWidget *parent = nullptr);
     ~ErrorPassword();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::ErrorPassword *ui;
 };

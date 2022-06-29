@@ -10,6 +10,9 @@
 #include "exitmessage.h"
 #include "ui_exitmessage.h"
 
+#include "password.h"
+#include "ui_password.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -52,8 +55,8 @@ void MainWindow::on_pushButton_2_clicked()
 }
 
 void MainWindow::on_pushButton_3_clicked()
-{
-    AdminPanel *w = new AdminPanel;
+{    
+    Password *w = new Password;
     w->show();
     this->close();
 }
