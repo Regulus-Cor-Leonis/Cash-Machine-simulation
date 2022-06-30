@@ -346,7 +346,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -465,7 +465,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -584,7 +584,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -703,7 +703,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -822,7 +822,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
