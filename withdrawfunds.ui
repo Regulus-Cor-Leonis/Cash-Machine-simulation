@@ -143,10 +143,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>390</y>
-      <width>191</width>
-      <height>111</height>
+      <x>320</x>
+      <y>380</y>
+      <width>211</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -157,8 +157,8 @@
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>30</y>
+       <x>60</x>
+       <y>40</y>
        <width>91</width>
        <height>51</height>
       </rect>
@@ -173,6 +173,9 @@
       <string notr="true">QPushButton {
 	background-color: rgb(82, 137, 225);
 	border-radius: 25px;
+	border-style:solid;
+	border-width:3px;
+	border-color: rgb(0, 0, 0);
 }
 
 QPushButton:hover {
@@ -200,6 +203,58 @@ QPushButton:pressed {
       </size>
      </property>
     </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>-54</x>
+       <y>6</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/Krilo2V1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>7</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/KrilaV3.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>-19</x>
+       <y>18</y>
+       <width>241</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>label_10</zorder>
+    <zorder>label_8</zorder>
+    <zorder>label_9</zorder>
+    <zorder>pushButton_2</zorder>
    </widget>
    <widget class="QFrame" name="frame_3">
     <property name="enabled">
@@ -207,10 +262,10 @@ QPushButton:pressed {
     </property>
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>470</y>
-      <width>201</width>
-      <height>111</height>
+      <x>490</x>
+      <y>460</y>
+      <width>221</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -221,8 +276,8 @@ QPushButton:pressed {
     <widget class="QPushButton" name="pushButton_3">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>30</y>
+       <x>60</x>
+       <y>40</y>
        <width>101</width>
        <height>51</height>
       </rect>
@@ -237,6 +292,9 @@ QPushButton:pressed {
       <string notr="true">QPushButton {
 	background-color: rgb(82, 137, 225);
 	border-radius: 25px;
+	border-style:solid;
+	border-width:3px;
+	border-color: rgb(0, 0, 0);
 }
 
 QPushButton:hover {
@@ -264,6 +322,58 @@ QPushButton:pressed {
       </size>
      </property>
     </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>-54</x>
+       <y>6</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/Krilo2V1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>18</y>
+       <width>241</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>18</x>
+       <y>6</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/KrilaV3.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>label_12</zorder>
+    <zorder>label_13</zorder>
+    <zorder>label_11</zorder>
+    <zorder>pushButton_3</zorder>
    </widget>
    <widget class="QFrame" name="frame_4">
     <property name="enabled">
@@ -271,10 +381,10 @@ QPushButton:pressed {
     </property>
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>600</y>
-      <width>201</width>
-      <height>111</height>
+      <x>420</x>
+      <y>590</y>
+      <width>221</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -285,8 +395,8 @@ QPushButton:pressed {
     <widget class="QPushButton" name="pushButton_4">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>30</y>
+       <x>60</x>
+       <y>40</y>
        <width>101</width>
        <height>51</height>
       </rect>
@@ -301,6 +411,9 @@ QPushButton:pressed {
       <string notr="true">QPushButton {
 	background-color: rgb(82, 137, 225);
 	border-radius: 25px;
+	border-style:solid;
+	border-width:3px;
+	border-color: rgb(0, 0, 0);
 }
 
 QPushButton:hover {
@@ -328,6 +441,58 @@ QPushButton:pressed {
       </size>
      </property>
     </widget>
+    <widget class="QLabel" name="label_20">
+     <property name="geometry">
+      <rect>
+       <x>-54</x>
+       <y>6</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/Krilo2V1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_21">
+     <property name="geometry">
+      <rect>
+       <x>18</x>
+       <y>6</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/KrilaV3.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_22">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>18</y>
+       <width>241</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>label_21</zorder>
+    <zorder>label_22</zorder>
+    <zorder>label_20</zorder>
+    <zorder>pushButton_4</zorder>
    </widget>
    <widget class="QFrame" name="frame_5">
     <property name="enabled">
@@ -335,10 +500,10 @@ QPushButton:pressed {
     </property>
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>600</y>
-      <width>201</width>
-      <height>111</height>
+      <x>220</x>
+      <y>590</y>
+      <width>221</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -349,8 +514,8 @@ QPushButton:pressed {
     <widget class="QPushButton" name="pushButton_5">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>30</y>
+       <x>60</x>
+       <y>40</y>
        <width>101</width>
        <height>51</height>
       </rect>
@@ -365,6 +530,9 @@ QPushButton:pressed {
       <string notr="true">QPushButton {
 	background-color: rgb(82, 137, 225);
 	border-radius: 25px;
+	border-style:solid;
+	border-width:3px;
+	border-color: rgb(0, 0, 0);
 }
 
 QPushButton:hover {
@@ -392,6 +560,58 @@ QPushButton:pressed {
       </size>
      </property>
     </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>-54</x>
+       <y>6</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/Krilo2V1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>18</x>
+       <y>6</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/KrilaV3.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_19">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>18</y>
+       <width>241</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>label_18</zorder>
+    <zorder>label_19</zorder>
+    <zorder>label_17</zorder>
+    <zorder>pushButton_5</zorder>
    </widget>
    <widget class="QFrame" name="frame_6">
     <property name="enabled">
@@ -399,10 +619,10 @@ QPushButton:pressed {
     </property>
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>470</y>
-      <width>211</width>
-      <height>111</height>
+      <x>150</x>
+      <y>460</y>
+      <width>231</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -413,8 +633,8 @@ QPushButton:pressed {
     <widget class="QPushButton" name="pushButton_6">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>30</y>
+       <x>60</x>
+       <y>40</y>
        <width>111</width>
        <height>51</height>
       </rect>
@@ -429,6 +649,9 @@ QPushButton:pressed {
       <string notr="true">QPushButton {
 	background-color: rgb(82, 137, 225);
 	border-radius: 25px;
+	border-style:solid;
+	border-width:3px;
+	border-color: rgb(0, 0, 0);
 }
 
 QPushButton:hover {
@@ -456,11 +679,63 @@ QPushButton:pressed {
       </size>
      </property>
     </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>-54</x>
+       <y>6</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/Krilo2V1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>18</y>
+       <width>241</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>28</x>
+       <y>6</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/KrilaV3.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>label_16</zorder>
+    <zorder>label_15</zorder>
+    <zorder>label_14</zorder>
+    <zorder>pushButton_6</zorder>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>720</x>
+      <x>750</x>
       <y>430</y>
       <width>231</width>
       <height>41</height>
@@ -482,7 +757,7 @@ QPushButton:pressed {
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>760</x>
       <y>370</y>
       <width>211</width>
       <height>16</height>
@@ -505,7 +780,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>370</y>
+      <y>350</y>
       <width>261</width>
       <height>16</height>
      </rect>
@@ -529,10 +804,10 @@ QPushButton:pressed {
     </property>
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>520</y>
-      <width>301</width>
-      <height>111</height>
+      <x>700</x>
+      <y>540</y>
+      <width>321</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -543,8 +818,8 @@ QPushButton:pressed {
     <widget class="QPushButton" name="pushButton_7">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>30</y>
+       <x>60</x>
+       <y>40</y>
        <width>221</width>
        <height>51</height>
       </rect>
@@ -559,6 +834,9 @@ QPushButton:pressed {
       <string notr="true">QPushButton {
 	background-color: rgb(255, 68, 35);
 	border-radius: 25px;
+	border-style:solid;
+	border-width:3px;
+	border-color: rgb(0, 0, 0);
 }
 
 QPushButton:hover {
@@ -586,6 +864,58 @@ QPushButton:pressed {
       </size>
      </property>
     </widget>
+    <widget class="QLabel" name="label_25">
+     <property name="geometry">
+      <rect>
+       <x>-54</x>
+       <y>6</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/KriloKrasnoe2.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_24">
+     <property name="geometry">
+      <rect>
+       <x>164</x>
+       <y>6</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/KriloKrasnoe.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_23">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>18</y>
+       <width>241</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>label_25</zorder>
+    <zorder>label_24</zorder>
+    <zorder>label_23</zorder>
+    <zorder>pushButton_7</zorder>
    </widget>
    <widget class="QFrame" name="frame_8">
     <property name="enabled">
