@@ -221,22 +221,18 @@ QList<Cash> sortDescending(QList<Cash> atm){
         QList<Cash>::Iterator j;
         QList<Cash>::Iterator maxj=i;
         int max=i->getDenomination();
-        //qDebug()<<"It's i="<<i->getDenomination();
         for(j=i; j!=atm.end();++j){
-            //qDebug()<<j->getDenomination();
             if (max<j->getDenomination()){
                 maxj=j;
                 max=j->getDenomination();
             }
         }
-        //qDebug()<<"Max="<<maxj->getDenomination();
         int temp=i->getDenomination();
         i->setDenomination(maxj->getDenomination());
         maxj->setDenomination(temp);
         temp=i->getCount();
         i->setCount(maxj->getCount());
         maxj->setCount(temp);
-        //qDebug()<<"after swap";
     }
     return atm;
 }
@@ -247,22 +243,18 @@ QList<Cash> sortAscending(QList<Cash> atm){
         QList<Cash>::Iterator j;
         QList<Cash>::Iterator minj=i;
         int min=i->getDenomination();
-        //qDebug()<<"It's i="<<i->getDenomination();
         for(j=i; j!=atm.end();++j){
-            //qDebug()<<j->getDenomination();
             if (min>j->getDenomination()){
                 minj=j;
                 min=j->getDenomination();
             }
         }
-        //qDebug()<<"Max="<<maxj->getDenomination();
         int temp=i->getDenomination();
         i->setDenomination(minj->getDenomination());
         minj->setDenomination(temp);
         temp=i->getCount();
         i->setCount(minj->getCount());
         minj->setCount(temp);
-        //qDebug()<<"after swap";
     }
     return atm;
 }
@@ -274,23 +266,22 @@ bool minCountOfBills(QList<Cash> atm,int request){
     for (i = atm.begin(); i != atm.end(); ++i){
         sum+=i->getCount()*i->getDenomination();
     }
-    qDebug()<<sum;
     if (sum<request){
         return false;
     }
     else {
-        const int INF=1000000000; // Значение константы }бесконечность}
+        const int INF=1000000000;
         int* F=new int[request+1];
         F[0]=0;
         int m;
-        for(m=1; m<=request; ++m)   // заполняем массив F
-        {                     // m - сумма, которую нужно выдать
-          F[m]=INF;           // помечаем, что сумму m выдать нельзя
-          for (i = atm.begin(); i != atm.end(); ++i)  // перебираем все номиналы банкнот
+        for(m=1; m<=request; ++m)
+        {
+          F[m]=INF;
+          for (i = atm.begin(); i != atm.end(); ++i)
           {
-             if(m>=i->getDenomination() && F[m-i->getDenomination()]+1<F[m])
-                 F[m] = F[m-i->getDenomination()]+1; // изменяем значение F[m], если нашли
-          }                       // лучший способ выдать сумму m
+             if((m>=i->getDenomination()) && (F[m-i->getDenomination()]+1<F[m]))
+                 F[m] = F[m-i->getDenomination()]+1;
+          }
         }
         if (F[request] == INF){
             qDebug()<<"Not success";
@@ -298,6 +289,7 @@ bool minCountOfBills(QList<Cash> atm,int request){
         }
         else
         {
+            qDebug()<<"F[request]"<<F[request];
             int *denomination=new int[atm.length()];
             i=atm.begin();
             for(int j=0;j<atm.length();++j){
@@ -315,7 +307,6 @@ bool minCountOfBills(QList<Cash> atm,int request){
                 {
                     if (F[request - i->getDenomination()] == F[request] - 1)
                     {
-                        qDebug() <<i->getDenomination() << " ";
                         for(int j=0;j<atm.length();j++){
                             if (i->getDenomination()==denomination[j]) count[j]++;
                         }
@@ -329,7 +320,6 @@ bool minCountOfBills(QList<Cash> atm,int request){
             }
             int j=0;
             for (i = atm.begin(); i != atm.end(); ++i){
-                //qDebug()<<atm->getMoney()[i].getCount()<<" "<<count[i];
                 if (i->getCount()<count[j]){
                     suma+=(count[j]-i->getCount())*i->getDenomination();
                     i->setCount(0);
@@ -360,13 +350,13 @@ bool minCountOfBills(QList<Cash> atm,int request){
 }*/
 
 void issuance(QList<Cash> ATM, int request){
-    qDebug()<<request;
+    qDebug()<<"request="<<request;
     int sum=0;
     QList<Cash>::iterator i;
     for (i = ATM.begin(); i != ATM.end(); ++i){
         sum+=i->getCount()*i->getDenomination();
     }
-    qDebug()<<sum;
+    qDebug()<<"Suma="<<sum;
     if (sum<request){
         qDebug()<<"Not enough funds at the ATM ";
         OutOfMoney *w=new OutOfMoney;
@@ -388,7 +378,10 @@ void WithdrawFunds::on_pushButton_7_clicked()
         DB* db = DB::getInstance();
         ATM=db->getBillsFromDB();
     }
-    //qDebug()<<ATM.length();
+    QList<Cash>::Iterator i;
+    for (i=ATM.begin();i!=ATM.end();++i){
+        qDebug()<<"Money "<<i->getDenomination()<<" "<<i->getCount();
+    }
     long long int request=ui->lineEdit->text().toLongLong(&ok,10);
     if (ok==false){
         ReadError *w=new ReadError;
@@ -396,11 +389,7 @@ void WithdrawFunds::on_pushButton_7_clicked()
         ui->lineEdit->setText("");
     }
     else{
-        //QList<Cash>::iterator i;
-        ATM=sortAscending(ATM);
-        /*for (i = ATM.begin(); i != ATM.end(); ++i){
-            qDebug()<<i->getCount()<<" "<<i->getDenomination();
-        }*/
+        ATM=sortDescending(ATM);
         issuance(ATM,request);
     }
 }
@@ -412,7 +401,6 @@ void WithdrawFunds::on_pushButton_2_clicked()
         DB* db = DB::getInstance();
         ATM=db->getBillsFromDB();
     }
-    //qDebug()<<request<<"\n";
     ATM=sortAscending(ATM);
     issuance(ATM,request);
 }

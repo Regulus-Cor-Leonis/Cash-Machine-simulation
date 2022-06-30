@@ -45,9 +45,9 @@ int main(int argc, char *argv[])
             ATM.append(bill);
         }
         //Console();
-        //MainWindow w;
-        //w.setATM(ATM);
-        //w.show();
+        MainWindow w;
+        w.setATM(ATM);
+        w.show();
         return a.exec();
     }
 }
