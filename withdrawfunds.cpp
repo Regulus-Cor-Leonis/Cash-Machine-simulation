@@ -24,6 +24,8 @@ WithdrawFunds::WithdrawFunds(QWidget *parent) :
     QTimer* timerA = new QTimer(this);
     connect(timerA, SIGNAL(timeout()), this, SLOT(animationButton()));
     timerA->start(1000); // "loop" once every 1000 millisecond
+
+    this->setFixedSize(1280, 780);
 }
 
 WithdrawFunds::~WithdrawFunds()

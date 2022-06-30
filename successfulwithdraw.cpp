@@ -6,6 +6,8 @@ SuccessfulWithdraw::SuccessfulWithdraw(QWidget *parent) :
     ui(new Ui::SuccessfulWithdraw)
 {
     ui->setupUi(this);
+    this->setFixedSize(751, 501);
+
 }
 
 SuccessfulWithdraw::~SuccessfulWithdraw()

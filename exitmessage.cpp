@@ -9,6 +9,7 @@ ExitMessage::ExitMessage(QWidget *parent) :
     ui(new Ui::ExitMessage)
 {
     ui->setupUi(this);
+    this->setFixedSize(510, 210);
 }
 
 ExitMessage::~ExitMessage()

@@ -1,5 +1,7 @@
 #include "adminpanel.h"
 #include "ui_adminpanel.h"
+#include "mainwindow.h"
+
 
 AdminPanel::AdminPanel(QWidget *parent) :
     QMainWindow(parent),
@@ -23,6 +25,7 @@ AdminPanel::AdminPanel(QWidget *parent) :
     DB* db = DB::getInstance();
     ui->tableView->setModel(db->getBillsModelFromDB());
 
+    this->setFixedSize(1280, 780);
 
 }
 
@@ -87,5 +90,13 @@ void AdminPanel::on_tableView_clicked(const QModelIndex &index)
         ui->lineEdit->setText(ui->tableView->model()->data(index.siblingAtColumn(0)).toString());
         ui->lineEdit_2->setText(ui->tableView->model()->data(index).toString());
     }
+}
+
+
+void AdminPanel::on_pushButton_10_clicked()
+{
+    MainWindow *w = new MainWindow;
+    w->show();
+    this->close();
 }
 
