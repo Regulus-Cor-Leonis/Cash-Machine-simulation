@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QDateTime>
-#include "cashwithdrawal.h"
+#include "cash.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

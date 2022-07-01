@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "cash.h"
-#include "cashwithdrawal.h"
 #include <iostream>
 #include <QApplication>
 #include <QDebug>

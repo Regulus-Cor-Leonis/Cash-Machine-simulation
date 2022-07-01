@@ -10,7 +10,7 @@
 #include <QTimer>
 #include <QThread>
 #include <QDateTime>
-#include "cashwithdrawal.h"
+#include "cash.h"
 #include <QDebug>
 
 namespace Ui {
@@ -21,13 +21,17 @@ class WithdrawFunds : public QMainWindow
 {
     Q_OBJECT
     QList<Cash> ATM;
+    QList<int> resFunds;
 
 public:
     explicit WithdrawFunds(QWidget *parent = nullptr);
     ~WithdrawFunds();
     void setATM(QList<Cash> atm){this->ATM=atm;}
     QList<Cash> getATM(){return this->ATM;}
-    void minCountOfBills(QList<Cash>,int);
+    bool minCountOfBills(int, QList<int> , QList<int> , int , int );
+    void issuance(QList<int> , QList<int>, int );
+    /*void setresFunds(QList<int>* funds){this->resFunds=funds;}
+    QList<int>* getresFunds(){return this->resFunds;}*/
 
 private:
     Ui::WithdrawFunds *ui;
