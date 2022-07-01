@@ -113,10 +113,10 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>340</y>
-      <width>911</width>
-      <height>371</height>
+      <x>160</x>
+      <y>180</y>
+      <width>951</width>
+      <height>451</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -143,8 +143,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>380</y>
+      <x>360</x>
+      <y>230</y>
       <width>211</width>
       <height>131</height>
      </rect>
@@ -245,7 +245,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -262,8 +262,8 @@ QPushButton:pressed {
     </property>
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>460</y>
+      <x>540</x>
+      <y>330</y>
       <width>221</width>
       <height>131</height>
      </rect>
@@ -348,7 +348,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -381,8 +381,8 @@ QPushButton:pressed {
     </property>
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>590</y>
+      <x>470</x>
+      <y>480</y>
       <width>221</width>
       <height>131</height>
      </rect>
@@ -483,7 +483,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -501,7 +501,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>590</y>
+      <y>480</y>
       <width>221</width>
       <height>131</height>
      </rect>
@@ -602,7 +602,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -619,8 +619,8 @@ QPushButton:pressed {
     </property>
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>460</y>
+      <x>160</x>
+      <y>340</y>
       <width>231</width>
       <height>131</height>
      </rect>
@@ -705,7 +705,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -735,8 +735,8 @@ QPushButton:pressed {
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>430</y>
+      <x>820</x>
+      <y>240</y>
       <width>231</width>
       <height>41</height>
      </rect>
@@ -757,8 +757,8 @@ QPushButton:pressed {
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>760</x>
-      <y>370</y>
+      <x>830</x>
+      <y>200</y>
       <width>211</width>
       <height>16</height>
      </rect>
@@ -779,8 +779,8 @@ QPushButton:pressed {
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>350</y>
+      <x>340</x>
+      <y>200</y>
       <width>261</width>
       <height>16</height>
      </rect>
@@ -804,8 +804,8 @@ QPushButton:pressed {
     </property>
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>540</y>
+      <x>770</x>
+      <y>300</y>
       <width>321</width>
       <height>131</height>
      </rect>
@@ -906,7 +906,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -923,7 +923,7 @@ QPushButton:pressed {
     </property>
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>150</x>
       <y>0</y>
       <width>111</width>
       <height>71</height>
@@ -953,6 +953,9 @@ QPushButton:pressed {
       <string notr="true">QPushButton {
 	background-color: rgb(82, 137, 225);
 	border-radius: 15px;
+	border-style:solid;
+	border-width:3px;
+	border-color: rgb(0, 0, 0);
 }
 
 QPushButton:hover {
@@ -975,24 +978,216 @@ QPushButton:pressed {
      </property>
      <property name="iconSize">
       <size>
-       <width>26</width>
-       <height>26</height>
+       <width>22</width>
+       <height>22</height>
       </size>
      </property>
     </widget>
+    <widget class="QLabel" name="label_27">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/Krilo2V1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_26">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/KrilaV3.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_28">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>label_27</zorder>
+    <zorder>label_26</zorder>
+    <zorder>label_28</zorder>
+    <zorder>pushButton_8</zorder>
    </widget>
+   <widget class="QLabel" name="label_29">
+    <property name="geometry">
+     <rect>
+      <x>365</x>
+      <y>375</y>
+      <width>181</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/images/sources/BlueDragonV2.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_30">
+    <property name="geometry">
+     <rect>
+      <x>745</x>
+      <y>230</y>
+      <width>91</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/images/sources/RedDragonV2.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_31">
+    <property name="geometry">
+     <rect>
+      <x>1034</x>
+      <y>230</y>
+      <width>91</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/images/sources/RedDragon.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_32">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>430</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/images/sources/BlueDragonPos4.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_33">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>490</y>
+      <width>211</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/images/sources/RedDragonPos3.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_34">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>480</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/images/sources/RedDragonPos2.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_35">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>430</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/images/sources/BlueDragonPos1.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_36">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>540</y>
+      <width>111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/images/sources/BlueDragonPos3.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_5</zorder>
+   <zorder>frame_2</zorder>
+   <zorder>frame_3</zorder>
+   <zorder>frame_4</zorder>
+   <zorder>frame_5</zorder>
+   <zorder>frame_6</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_7</zorder>
+   <zorder>frame_7</zorder>
+   <zorder>frame_8</zorder>
+   <zorder>label_29</zorder>
+   <zorder>label_30</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>label_31</zorder>
+   <zorder>label_32</zorder>
+   <zorder>label_33</zorder>
+   <zorder>label_34</zorder>
+   <zorder>label_35</zorder>
+   <zorder>label_36</zorder>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1280</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
   <include location="sources.qrc"/>

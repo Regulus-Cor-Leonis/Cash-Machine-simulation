@@ -13,6 +13,8 @@
 #include "password.h"
 #include "ui_password.h"
 
+#include <QScreen>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -26,6 +28,8 @@ MainWindow::MainWindow(QWidget *parent)
     QDateTime dateTime = QDateTime::currentDateTime();
     QString dateTimeText = dateTime.toString();
     ui->label_4->setText(dateTimeText);
+
+    this->setFixedSize(1280, 780);
 }
 
 void MainWindow::showTime()
@@ -60,4 +64,8 @@ void MainWindow::on_pushButton_3_clicked()
     w->setATM(ATM);
     w->show();
     this->close();
+    //-------------------------------------------------------------------------------------
+    //SuccessfulWithdraw *w = new SuccessfulWithdraw;
+    //w->show();
+    //this->close();
 }

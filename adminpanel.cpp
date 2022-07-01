@@ -24,6 +24,7 @@ AdminPanel::AdminPanel(QWidget *parent) :
 
     //DB* db = DB::getInstance();
 
+    this->setFixedSize(1280, 780);
 
 }
 

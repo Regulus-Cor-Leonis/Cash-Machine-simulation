@@ -20,11 +20,30 @@
         <file>sources/Yes.png</file>
         <file>sources/BackA.png</file>
         <file>sources/Krila.png</file>
+        <file>sources/DragonTail.png</file>
         <file>sources/KrilaV2.png</file>
         <file>sources/KrilaV3.png</file>
         <file>sources/Krilo2V1.png</file>
         <file>sources/KriloKrasnoe.png</file>
         <file>sources/KriloKrasnoe2.png</file>
         <file>sources/Arrow.png</file>
+        <file>sources/BlueDragon.png</file>
+        <file>sources/BlueDragonV2.png</file>
+        <file>sources/RedDragon.png</file>
+        <file>sources/RedDragonV2.png</file>
+        <file>sources/Bank.png</file>
+        <file>sources/MoneyCash.png</file>
+        <file>sources/RedDragonPos1.png</file>
+        <file>sources/RedDragonPos2.png</file>
+        <file>sources/RedDragonPos3.png</file>
+        <file>sources/BlueDragonPos1.png</file>
+        <file>sources/BlueDragonPos2.png</file>
+        <file>sources/BlueDragonPos3.png</file>
+        <file>sources/BlueDragonPos4.png</file>
+        <file>sources/RedDragonPos4.png</file>
+        <file>sources/TwoArrow.png</file>
+        <file>sources/TwoArrowV2.png</file>
+        <file>sources/BlueDragonPos5.png</file>
+        <file>sources/RedDragonPos6.png</file>
     </qresource>
 </RCC>

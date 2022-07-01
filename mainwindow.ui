@@ -20,8 +20,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>530</y>
+      <x>500</x>
+      <y>580</y>
       <width>301</width>
       <height>151</height>
      </rect>
@@ -122,7 +122,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -157,32 +157,8 @@ QPushButton:pressed {
     <property name="scaledContents">
      <bool>true</bool>
     </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>370</y>
-      <width>581</width>
-      <height>341</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel{
-  	border-radius: 50px;
-  	min-height: 20px;
- 	min-width: 20px;
-	border-image: url(:/images/sources/Back.png);
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>false</bool>
+    <property name="alignment">
+     <set>Qt::AlignJustify|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QFrame" name="frame_2">
@@ -191,8 +167,8 @@ QPushButton:pressed {
     </property>
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>380</y>
+      <x>370</x>
+      <y>410</y>
       <width>311</width>
       <height>131</height>
      </rect>
@@ -293,7 +269,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -382,7 +358,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>710</x>
-      <y>370</y>
+      <y>450</y>
       <width>261</width>
       <height>131</height>
      </rect>
@@ -483,7 +459,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/images/sources/Монтажная область 1.png);</string>
+      <string notr="true">border-image: url(:/images/sources/DragonTail.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -495,7 +471,6 @@ QPushButton:pressed {
     <zorder>pushButton_3</zorder>
    </widget>
    <zorder>label</zorder>
-   <zorder>label_2</zorder>
    <zorder>frame</zorder>
    <zorder>frame_2</zorder>
    <zorder>label_3</zorder>
@@ -503,17 +478,6 @@ QPushButton:pressed {
    <zorder>label_5</zorder>
    <zorder>frame_3</zorder>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1280</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
   <include location="sources.qrc"/>

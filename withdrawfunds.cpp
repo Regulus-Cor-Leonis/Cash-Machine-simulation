@@ -5,6 +5,7 @@
 #include "db.h"
 #include "successfulwithdraw.h"
 #include "outofmoney.h"
+#include "nobills.h"
 #include <iostream>
 
 using namespace std;
@@ -29,7 +30,8 @@ WithdrawFunds::WithdrawFunds(QWidget *parent) :
 
     QTimer* timerA = new QTimer(this);
     connect(timerA, SIGNAL(timeout()), this, SLOT(animationButton()));
-    timerA->start(1000); // "loop" once every 1000 millisecond
+    timerA->start(1500); // "loop" once every 1000 millisecond
+    this->setFixedSize(1280, 780);
 }
 
 WithdrawFunds::~WithdrawFunds()
@@ -50,29 +52,29 @@ void WithdrawFunds::animationButton()
         {
             count = count + 1;
             QPropertyAnimation* animation1 = new QPropertyAnimation(ui->frame_2, "geometry");
-            animation1->setDuration(1000);
+            animation1->setDuration(1500);
             animation1->setEasingCurve(QEasingCurve::Linear);
-            animation1->setEndValue(QRect(500, 470, 191, 111));
+            animation1->setEndValue(QRect(540, 330, 211, 131));
 
             QPropertyAnimation* animation2 = new QPropertyAnimation(ui->frame_3, "geometry");
-            animation2->setDuration(1000);
+            animation2->setDuration(1500);
             animation2->setEasingCurve(QEasingCurve::Linear);
-            animation2->setEndValue(QRect(430, 600, 201, 111));
+            animation2->setEndValue(QRect(470, 480, 221, 131));
 
             QPropertyAnimation* animation3 = new QPropertyAnimation(ui->frame_4, "geometry");
-            animation3->setDuration(1000);
+            animation3->setDuration(1500);
             animation3->setEasingCurve(QEasingCurve::Linear);
-            animation3->setEndValue(QRect(230, 600, 201, 111));
+            animation3->setEndValue(QRect(220, 480, 221, 131));
 
             QPropertyAnimation* animation4 = new QPropertyAnimation(ui->frame_5, "geometry");
-            animation4->setDuration(1000);
+            animation4->setDuration(1500);
             animation4->setEasingCurve(QEasingCurve::Linear);
-            animation4->setEndValue(QRect(160, 470, 201, 111));
+            animation4->setEndValue(QRect(160, 340, 221, 131));
 
             QPropertyAnimation* animation5 = new QPropertyAnimation(ui->frame_6, "geometry");
-            animation5->setDuration(1000);
+            animation5->setDuration(1500);
             animation5->setEasingCurve(QEasingCurve::Linear);
-            animation5->setEndValue(QRect(340, 390, 211, 111));
+            animation5->setEndValue(QRect(360, 230, 231, 131));
 
             animation1->start();
             animation2->start();
@@ -84,29 +86,29 @@ void WithdrawFunds::animationButton()
         {
             count = count + 1;
             QPropertyAnimation* animation1 = new QPropertyAnimation(ui->frame_2, "geometry");
-            animation1->setDuration(1000);
+            animation1->setDuration(1500);
             animation1->setEasingCurve(QEasingCurve::Linear);
-            animation1->setEndValue(QRect(430, 600, 191, 111));
+            animation1->setEndValue(QRect(470, 480, 211, 131));
 
             QPropertyAnimation* animation2 = new QPropertyAnimation(ui->frame_3, "geometry");
-            animation2->setDuration(1000);
+            animation2->setDuration(1500);
             animation2->setEasingCurve(QEasingCurve::Linear);
-            animation2->setEndValue(QRect(230, 600, 201, 111));
+            animation2->setEndValue(QRect(220, 480, 221, 131));
 
             QPropertyAnimation* animation3 = new QPropertyAnimation(ui->frame_4, "geometry");
-            animation3->setDuration(1000);
+            animation3->setDuration(1500);
             animation3->setEasingCurve(QEasingCurve::Linear);
-            animation3->setEndValue(QRect(160, 470, 201, 111));
+            animation3->setEndValue(QRect(160, 340, 221, 131));
 
             QPropertyAnimation* animation4 = new QPropertyAnimation(ui->frame_5, "geometry");
-            animation4->setDuration(1000);
+            animation4->setDuration(1500);
             animation4->setEasingCurve(QEasingCurve::Linear);
-            animation4->setEndValue(QRect(340, 410, 201, 111));
+            animation4->setEndValue(QRect(360, 230, 221, 131));
 
             QPropertyAnimation* animation5 = new QPropertyAnimation(ui->frame_6, "geometry");
-            animation5->setDuration(1000);
+            animation5->setDuration(1500);
             animation5->setEasingCurve(QEasingCurve::Linear);
-            animation5->setEndValue(QRect(500, 470, 211, 111));
+            animation5->setEndValue(QRect(540, 330, 231, 131));
 
             animation1->start();
             animation2->start();
@@ -118,29 +120,29 @@ void WithdrawFunds::animationButton()
         {
             count = count + 1;
             QPropertyAnimation* animation1 = new QPropertyAnimation(ui->frame_2, "geometry");
-            animation1->setDuration(1000);
+            animation1->setDuration(1500);
             animation1->setEasingCurve(QEasingCurve::Linear);
-            animation1->setEndValue(QRect(230, 600, 191, 111));
+            animation1->setEndValue(QRect(220, 480, 211, 131));
 
             QPropertyAnimation* animation2 = new QPropertyAnimation(ui->frame_3, "geometry");
-            animation2->setDuration(1000);
+            animation2->setDuration(1500);
             animation2->setEasingCurve(QEasingCurve::Linear);
-            animation2->setEndValue(QRect(160, 470, 201, 111));
+            animation2->setEndValue(QRect(160, 340, 221, 131));
 
             QPropertyAnimation* animation3 = new QPropertyAnimation(ui->frame_4, "geometry");
-            animation3->setDuration(1000);
+            animation3->setDuration(1500);
             animation3->setEasingCurve(QEasingCurve::Linear);
-            animation3->setEndValue(QRect(340, 410, 201, 111));
+            animation3->setEndValue(QRect(360, 230, 221, 131));
 
             QPropertyAnimation* animation4 = new QPropertyAnimation(ui->frame_5, "geometry");
-            animation4->setDuration(1000);
+            animation4->setDuration(1500);
             animation4->setEasingCurve(QEasingCurve::Linear);
-            animation4->setEndValue(QRect(500, 470, 201, 111));
+            animation4->setEndValue(QRect(540, 330, 221, 131));
 
             QPropertyAnimation* animation5 = new QPropertyAnimation(ui->frame_6, "geometry");
-            animation5->setDuration(1000);
+            animation5->setDuration(1500);
             animation5->setEasingCurve(QEasingCurve::Linear);
-            animation5->setEndValue(QRect(430, 600, 211, 111));
+            animation5->setEndValue(QRect(470, 480, 231, 131));
 
             animation1->start();
             animation2->start();
@@ -152,29 +154,29 @@ void WithdrawFunds::animationButton()
         {
             count = count + 1;
             QPropertyAnimation* animation1 = new QPropertyAnimation(ui->frame_2, "geometry");
-            animation1->setDuration(1000);
+            animation1->setDuration(1500);
             animation1->setEasingCurve(QEasingCurve::Linear);
-            animation1->setEndValue(QRect(160, 470, 191, 111));
+            animation1->setEndValue(QRect(160, 340, 211, 131));
 
             QPropertyAnimation* animation2 = new QPropertyAnimation(ui->frame_3, "geometry");
-            animation2->setDuration(1000);
+            animation2->setDuration(1500);
             animation2->setEasingCurve(QEasingCurve::Linear);
-            animation2->setEndValue(QRect(340, 410, 201, 111));
+            animation2->setEndValue(QRect(360, 230, 221, 131));
 
             QPropertyAnimation* animation3 = new QPropertyAnimation(ui->frame_4, "geometry");
-            animation3->setDuration(1000);
+            animation3->setDuration(1500);
             animation3->setEasingCurve(QEasingCurve::Linear);
-            animation3->setEndValue(QRect(500, 470, 201, 111));
+            animation3->setEndValue(QRect(540, 330, 221, 131));
 
             QPropertyAnimation* animation4 = new QPropertyAnimation(ui->frame_5, "geometry");
-            animation4->setDuration(1000);
+            animation4->setDuration(1500);
             animation4->setEasingCurve(QEasingCurve::Linear);
-            animation4->setEndValue(QRect(430, 600, 201, 111));
+            animation4->setEndValue(QRect(470, 480, 221, 131));
 
             QPropertyAnimation* animation5 = new QPropertyAnimation(ui->frame_6, "geometry");
-            animation5->setDuration(1000);
+            animation5->setDuration(1500);
             animation5->setEasingCurve(QEasingCurve::Linear);
-            animation5->setEndValue(QRect(230, 600, 211, 111));
+            animation5->setEndValue(QRect(220, 480, 231, 131));
 
             animation1->start();
             animation2->start();
@@ -186,29 +188,29 @@ void WithdrawFunds::animationButton()
         {
             count = 0;
             QPropertyAnimation* animation1 = new QPropertyAnimation(ui->frame_2, "geometry");
-            animation1->setDuration(1000);
+            animation1->setDuration(1500);
             animation1->setEasingCurve(QEasingCurve::Linear);
-            animation1->setEndValue(QRect(340, 410, 191, 111));
+            animation1->setEndValue(QRect(360, 230, 211, 131));
 
             QPropertyAnimation* animation2 = new QPropertyAnimation(ui->frame_3, "geometry");
-            animation2->setDuration(1000);
+            animation2->setDuration(1500);
             animation2->setEasingCurve(QEasingCurve::Linear);
-            animation2->setEndValue(QRect(500, 470, 201, 111));
+            animation2->setEndValue(QRect(540, 330, 221, 131));
 
             QPropertyAnimation* animation3 = new QPropertyAnimation(ui->frame_4, "geometry");
-            animation3->setDuration(1000);
+            animation3->setDuration(1500);
             animation3->setEasingCurve(QEasingCurve::Linear);
-            animation3->setEndValue(QRect(430, 600, 201, 111));
+            animation3->setEndValue(QRect(470, 480, 221, 131));
 
             QPropertyAnimation* animation4 = new QPropertyAnimation(ui->frame_5, "geometry");
-            animation4->setDuration(1000);
+            animation4->setDuration(1500);
             animation4->setEasingCurve(QEasingCurve::Linear);
-            animation4->setEndValue(QRect(230, 600, 201, 111));
+            animation4->setEndValue(QRect(220, 480, 221, 131));
 
             QPropertyAnimation* animation5 = new QPropertyAnimation(ui->frame_6, "geometry");
-            animation5->setDuration(1000);
+            animation5->setDuration(1500);
             animation5->setEasingCurve(QEasingCurve::Linear);
-            animation5->setEndValue(QRect(160, 470, 211, 111));
+            animation5->setEndValue(QRect(160, 340, 231, 131));
 
             animation1->start();
             animation2->start();
@@ -316,8 +318,16 @@ void WithdrawFunds::issuance(QList<int> money, QList<int> funds, int request){
         return;
     } else {
         int i=0;
-        if (minCountOfBills(i,money,funds,request,0)) cout<<"TRUE"<<endl;
-        else cout<<"FALSE"<<endl;
+        if (minCountOfBills(i,money,funds,request,0)) {
+            cout<<"TRUE"<<endl;
+            SuccessfulWithdraw* w= new SuccessfulWithdraw;
+            w->show();
+        }
+        else {
+            cout<<"FALSE"<<endl;
+            NoBills* w=new NoBills;
+            w->show();
+        }
     }
 }
 
@@ -358,10 +368,6 @@ void WithdrawFunds::on_pushButton_7_clicked()
             }
         }
         QList<int>::Iterator j;
-        for (j=money.begin();j!=money.end();++j){
-            cout<<"Money: "<<*j<<" ";
-        }
-        cout<<endl;
         issuance(money,index,request);
         for (j=resFunds.begin();j!=resFunds.end();++j){
             for(i=ptrATM->begin();i!=ptrATM->end();++i){
@@ -441,102 +447,3 @@ void WithdrawFunds::on_pushButton_8_clicked()
     w->show();
     this->close();
 }
-
-
-/*if (i==atm->end()) return false;
-if (i->getCount()==0) ++i;
-cout<<"\n\tSum="<<sum<<" \ti.d="<<i->getDenomination()<<" \ti.c="<<i->getCount()<<endl;
-if (sum<request){
-    funds->append(i);
-    sum+=i->getDenomination();
-    i->setCount(i->getCount()-1);
-}
-if (sum==request) return true;
-if (sum>request){
-    i->setCount(i->getCount()+1);
-    sum-=i->getDenomination();
-    funds->removeLast();
-    ++i;
-}
-if (i==atm->end()) return false;
-if (minCountOfBills(i,atm,funds,request,sum)){
-    cout<<"TRUE: \tSum="<<sum<<" \ti.d="<<i->getDenomination()<<" \ti.c="<<i->getCount()<<endl;
-    QList<QList<Cash>::Iterator>::Iterator j;
-    QList<Cash>::Iterator h;
-    for(j=funds->begin();j!=funds->end();++j){
-        h=*j;
-        cout<<"Funds: \tj.d="<<h->getDenomination()<<" \tj.c="<<h->getCount()<<endl;
-    }
-    return true;
-} else {
-    cout<<"FALSE-1: \tSum="<<sum<<" \ti.d="<<i->getDenomination()<<" \ti.c="<<i->getCount()<<endl;
-    QList<QList<Cash>::Iterator>::Iterator j;
-    QList<Cash>::Iterator h;
-    for(j=funds->begin();j!=funds->end();++j){
-        h=*j;
-        cout<<"Funds: \tj.d="<<h->getDenomination()<<" \tj.c="<<h->getCount()<<endl;
-    }
-    i=funds->last();
-    sum-=i->getDenomination();
-    i->setCount(i->getCount()+1);
-    funds->removeLast();
-    if (i==--atm->end()) return false;
-    cout<<"FALSE-2: \tSum="<<sum<<" \ti.d="<<i->getDenomination()<<" \ti.c="<<i->getCount()<<endl;
-    ++i;
-    if (i==atm->end()) return false;
-    else {
-        cout<<"FALSE-3: \tSum="<<sum<<" \ti.d="<<i->getDenomination()<<" \ti.c="<<i->getCount()<<endl;
-        minCountOfBills(i,atm,funds,request,sum);
-    }
-}*/
-
-
-/*bool isDefault(QList<Cash>* atm){
-    QList<int> defDenomination;
-    defDenomination.append(1000);
-    defDenomination.append(500);
-    defDenomination.append(200);
-    defDenomination.append(100);
-    defDenomination.append(50);
-    QList<Cash>::iterator i;
-    QList<int>::iterator j;
-    int counter=0;
-    for (i = atm->begin(); i != atm->end(); ++i){
-        for (j=defDenomination.begin();j!=defDenomination.end();++j){
-            if (i->getDenomination()==*j){
-                counter++;
-                break;
-            }
-        }
-    }
-    if (counter==atm->length()) return true;
-    else return false;
-}
-
-void defaultWithdraw(int request, int minvalue, QList<Cash>::Iterator h, QList<Cash>* atm, QList<int> valueList){
-    if (request==0){
-        cout<<"Result: request="<<request<<"\th="<<h->getDenomination()<<"\tvalueList=";
-        QList<int>::Iterator i;
-        for (i=valueList.begin();i!=valueList.end();++i){
-            cout<<*i<<" ";
-        }
-        cout<<endl;
-        return;
-    }
-    if ((minvalue>=500)&&(request>=500)){
-        valueList.append(500);
-        defaultWithdraw(request-500,500,h,atm,valueList);
-        valueList.removeLast();
-    }
-    if ((minvalue>=200)&&(request>=200)){
-        valueList.append(200);
-        defaultWithdraw(request-200,200,h,atm,valueList);
-        valueList.removeLast();
-    }
-    if ((minvalue>=100)&&(request>=100)){
-        valueList.append(100);
-        defaultWithdraw(request-100,100,h,atm,valueList);
-        valueList.removeLast();
-    }
-}*/
-
