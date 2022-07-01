@@ -1184,9 +1184,9 @@ QPushButton:pressed {
    <zorder>label_31</zorder>
    <zorder>label_32</zorder>
    <zorder>label_33</zorder>
-   <zorder>label_34</zorder>
    <zorder>label_35</zorder>
    <zorder>label_36</zorder>
+   <zorder>label_34</zorder>
   </widget>
  </widget>
  <resources>

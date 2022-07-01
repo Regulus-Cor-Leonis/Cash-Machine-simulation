@@ -445,6 +445,7 @@ void WithdrawFunds::on_pushButton_6_clicked()
 void WithdrawFunds::on_pushButton_8_clicked()
 {
     MainWindow *w=new MainWindow;
+    w->setAttribute(Qt::WA_DeleteOnClose);
     w->setATM(ATM);
     w->show();
     this->close();
