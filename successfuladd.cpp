@@ -6,6 +6,8 @@ SuccessfulAdd::SuccessfulAdd(QWidget *parent) :
     ui(new Ui::SuccessfulAdd)
 {
     ui->setupUi(this);
+    this->setFixedSize(470, 200);
+
 }
 
 SuccessfulAdd::~SuccessfulAdd()

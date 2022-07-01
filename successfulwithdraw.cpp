@@ -24,6 +24,8 @@ SuccessfulWithdraw::SuccessfulWithdraw(QWidget *parent) :
     connect(timerA, SIGNAL(timeout()), this, SLOT(stop()));
     timerA->start(1000);
     */
+
+    this->setFixedSize(751, 501);
 }
 
 SuccessfulWithdraw::~SuccessfulWithdraw()
