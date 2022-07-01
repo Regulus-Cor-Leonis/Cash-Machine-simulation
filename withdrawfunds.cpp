@@ -287,7 +287,6 @@ bool WithdrawFunds::minCountOfBills(int i, QList<int> money, QList<int> funds, i
     //cout<<"Sum="<<sum<<"\ti="<<i<<"\tj="<<j<<endl;
     if (sum+money[j]==request) {
         funds.append(money[j]);
-        QList<int>::Iterator h;
         resFunds=funds;
         return true;
     }
@@ -295,12 +294,14 @@ bool WithdrawFunds::minCountOfBills(int i, QList<int> money, QList<int> funds, i
         return minCountOfBills(j,money,funds,request,sum);
     } else {
         int h=j+1;
+        if (h>=money.length()) return false;
         while (money[h]==money[h+1]){
             h++;
             if (h==money.length()-2) return false;
         }
         return minCountOfBills(h+2,money,funds,request,sum);
     }
+    //зробити один ретурн
 }
 
 
@@ -321,6 +322,7 @@ void WithdrawFunds::issuance(QList<int> money, QList<int> funds, int request){
         if (minCountOfBills(i,money,funds,request,0)) {
             cout<<"TRUE"<<endl;
             SuccessfulWithdraw* w= new SuccessfulWithdraw;
+            w->setresFunds(this->resFunds);
             w->show();
         }
         else {

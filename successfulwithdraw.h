@@ -19,6 +19,7 @@ class SuccessfulWithdraw;
 class SuccessfulWithdraw : public QMainWindow
 {
     Q_OBJECT
+    QList<int> resFunds;
 
 public:
     explicit SuccessfulWithdraw(QWidget *parent = nullptr);
@@ -30,6 +31,7 @@ public:
     int iterator;
     int countA;
     QTimer* timerA;
+    void setresFunds(QList<int> funds){this->resFunds=funds;}
 
 private slots:
     void on_pushButton_2_clicked();
