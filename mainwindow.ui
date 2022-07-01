@@ -21,7 +21,7 @@
     <property name="geometry">
      <rect>
       <x>500</x>
-      <y>540</y>
+      <y>580</y>
       <width>301</width>
       <height>151</height>
      </rect>
@@ -165,7 +165,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>370</y>
+      <y>410</y>
       <width>311</width>
       <height>131</height>
      </rect>
@@ -355,7 +355,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>710</x>
-      <y>410</y>
+      <y>450</y>
       <width>261</width>
       <height>131</height>
      </rect>
@@ -475,17 +475,6 @@ QPushButton:pressed {
    <zorder>label_5</zorder>
    <zorder>frame_3</zorder>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1280</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
   <include location="sources.qrc"/>

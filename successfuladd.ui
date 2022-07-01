@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>470</width>
-    <height>200</height>
+    <height>180</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -205,16 +205,6 @@ QPushButton:pressed {
    <zorder>label_6</zorder>
    <zorder>frame_2</zorder>
    <zorder>label_3</zorder>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>470</width>
-     <height>21</height>
-    </rect>
-   </property>
   </widget>
  </widget>
  <resources>

@@ -13,6 +13,9 @@
 #include "password.h"
 #include "ui_password.h"
 
+#include "successfulwithdraw.h"
+#include "ui_successfulwithdraw.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -59,4 +62,8 @@ void MainWindow::on_pushButton_3_clicked()
     Password *w = new Password;
     w->show();
     this->close();
+    //-------------------------------------------------------------------------------------
+    //SuccessfulWithdraw *w = new SuccessfulWithdraw;
+    //w->show();
+    //this->close();
 }

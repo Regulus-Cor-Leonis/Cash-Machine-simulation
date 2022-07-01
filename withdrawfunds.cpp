@@ -23,7 +23,7 @@ WithdrawFunds::WithdrawFunds(QWidget *parent) :
 
     QTimer* timerA = new QTimer(this);
     connect(timerA, SIGNAL(timeout()), this, SLOT(animationButton()));
-    timerA->start(1000); // "loop" once every 1000 millisecond
+    timerA->start(1500); // "loop" once every 1000 millisecond
 }
 
 WithdrawFunds::~WithdrawFunds()
@@ -44,29 +44,29 @@ void WithdrawFunds::animationButton()
         {
             count = count + 1;
             QPropertyAnimation* animation1 = new QPropertyAnimation(ui->frame_2, "geometry");
-            animation1->setDuration(1000);
+            animation1->setDuration(1500);
             animation1->setEasingCurve(QEasingCurve::Linear);
-            animation1->setEndValue(QRect(500, 470, 191, 111));
+            animation1->setEndValue(QRect(540, 330, 211, 131));
 
             QPropertyAnimation* animation2 = new QPropertyAnimation(ui->frame_3, "geometry");
-            animation2->setDuration(1000);
+            animation2->setDuration(1500);
             animation2->setEasingCurve(QEasingCurve::Linear);
-            animation2->setEndValue(QRect(430, 600, 201, 111));
+            animation2->setEndValue(QRect(470, 480, 221, 131));
 
             QPropertyAnimation* animation3 = new QPropertyAnimation(ui->frame_4, "geometry");
-            animation3->setDuration(1000);
+            animation3->setDuration(1500);
             animation3->setEasingCurve(QEasingCurve::Linear);
-            animation3->setEndValue(QRect(230, 600, 201, 111));
+            animation3->setEndValue(QRect(220, 480, 221, 131));
 
             QPropertyAnimation* animation4 = new QPropertyAnimation(ui->frame_5, "geometry");
-            animation4->setDuration(1000);
+            animation4->setDuration(1500);
             animation4->setEasingCurve(QEasingCurve::Linear);
-            animation4->setEndValue(QRect(160, 470, 201, 111));
+            animation4->setEndValue(QRect(160, 340, 221, 131));
 
             QPropertyAnimation* animation5 = new QPropertyAnimation(ui->frame_6, "geometry");
-            animation5->setDuration(1000);
+            animation5->setDuration(1500);
             animation5->setEasingCurve(QEasingCurve::Linear);
-            animation5->setEndValue(QRect(340, 390, 211, 111));
+            animation5->setEndValue(QRect(360, 230, 231, 131));
 
             animation1->start();
             animation2->start();
@@ -78,29 +78,29 @@ void WithdrawFunds::animationButton()
         {
             count = count + 1;
             QPropertyAnimation* animation1 = new QPropertyAnimation(ui->frame_2, "geometry");
-            animation1->setDuration(1000);
+            animation1->setDuration(1500);
             animation1->setEasingCurve(QEasingCurve::Linear);
-            animation1->setEndValue(QRect(430, 600, 191, 111));
+            animation1->setEndValue(QRect(470, 480, 211, 131));
 
             QPropertyAnimation* animation2 = new QPropertyAnimation(ui->frame_3, "geometry");
-            animation2->setDuration(1000);
+            animation2->setDuration(1500);
             animation2->setEasingCurve(QEasingCurve::Linear);
-            animation2->setEndValue(QRect(230, 600, 201, 111));
+            animation2->setEndValue(QRect(220, 480, 221, 131));
 
             QPropertyAnimation* animation3 = new QPropertyAnimation(ui->frame_4, "geometry");
-            animation3->setDuration(1000);
+            animation3->setDuration(1500);
             animation3->setEasingCurve(QEasingCurve::Linear);
-            animation3->setEndValue(QRect(160, 470, 201, 111));
+            animation3->setEndValue(QRect(160, 340, 221, 131));
 
             QPropertyAnimation* animation4 = new QPropertyAnimation(ui->frame_5, "geometry");
-            animation4->setDuration(1000);
+            animation4->setDuration(1500);
             animation4->setEasingCurve(QEasingCurve::Linear);
-            animation4->setEndValue(QRect(340, 410, 201, 111));
+            animation4->setEndValue(QRect(360, 230, 221, 131));
 
             QPropertyAnimation* animation5 = new QPropertyAnimation(ui->frame_6, "geometry");
-            animation5->setDuration(1000);
+            animation5->setDuration(1500);
             animation5->setEasingCurve(QEasingCurve::Linear);
-            animation5->setEndValue(QRect(500, 470, 211, 111));
+            animation5->setEndValue(QRect(540, 330, 231, 131));
 
             animation1->start();
             animation2->start();
@@ -112,29 +112,29 @@ void WithdrawFunds::animationButton()
         {
             count = count + 1;
             QPropertyAnimation* animation1 = new QPropertyAnimation(ui->frame_2, "geometry");
-            animation1->setDuration(1000);
+            animation1->setDuration(1500);
             animation1->setEasingCurve(QEasingCurve::Linear);
-            animation1->setEndValue(QRect(230, 600, 191, 111));
+            animation1->setEndValue(QRect(220, 480, 211, 131));
 
             QPropertyAnimation* animation2 = new QPropertyAnimation(ui->frame_3, "geometry");
-            animation2->setDuration(1000);
+            animation2->setDuration(1500);
             animation2->setEasingCurve(QEasingCurve::Linear);
-            animation2->setEndValue(QRect(160, 470, 201, 111));
+            animation2->setEndValue(QRect(160, 340, 221, 131));
 
             QPropertyAnimation* animation3 = new QPropertyAnimation(ui->frame_4, "geometry");
-            animation3->setDuration(1000);
+            animation3->setDuration(1500);
             animation3->setEasingCurve(QEasingCurve::Linear);
-            animation3->setEndValue(QRect(340, 410, 201, 111));
+            animation3->setEndValue(QRect(360, 230, 221, 131));
 
             QPropertyAnimation* animation4 = new QPropertyAnimation(ui->frame_5, "geometry");
-            animation4->setDuration(1000);
+            animation4->setDuration(1500);
             animation4->setEasingCurve(QEasingCurve::Linear);
-            animation4->setEndValue(QRect(500, 470, 201, 111));
+            animation4->setEndValue(QRect(540, 330, 221, 131));
 
             QPropertyAnimation* animation5 = new QPropertyAnimation(ui->frame_6, "geometry");
-            animation5->setDuration(1000);
+            animation5->setDuration(1500);
             animation5->setEasingCurve(QEasingCurve::Linear);
-            animation5->setEndValue(QRect(430, 600, 211, 111));
+            animation5->setEndValue(QRect(470, 480, 231, 131));
 
             animation1->start();
             animation2->start();
@@ -146,29 +146,29 @@ void WithdrawFunds::animationButton()
         {
             count = count + 1;
             QPropertyAnimation* animation1 = new QPropertyAnimation(ui->frame_2, "geometry");
-            animation1->setDuration(1000);
+            animation1->setDuration(1500);
             animation1->setEasingCurve(QEasingCurve::Linear);
-            animation1->setEndValue(QRect(160, 470, 191, 111));
+            animation1->setEndValue(QRect(160, 340, 211, 131));
 
             QPropertyAnimation* animation2 = new QPropertyAnimation(ui->frame_3, "geometry");
-            animation2->setDuration(1000);
+            animation2->setDuration(1500);
             animation2->setEasingCurve(QEasingCurve::Linear);
-            animation2->setEndValue(QRect(340, 410, 201, 111));
+            animation2->setEndValue(QRect(360, 230, 221, 131));
 
             QPropertyAnimation* animation3 = new QPropertyAnimation(ui->frame_4, "geometry");
-            animation3->setDuration(1000);
+            animation3->setDuration(1500);
             animation3->setEasingCurve(QEasingCurve::Linear);
-            animation3->setEndValue(QRect(500, 470, 201, 111));
+            animation3->setEndValue(QRect(540, 330, 221, 131));
 
             QPropertyAnimation* animation4 = new QPropertyAnimation(ui->frame_5, "geometry");
-            animation4->setDuration(1000);
+            animation4->setDuration(1500);
             animation4->setEasingCurve(QEasingCurve::Linear);
-            animation4->setEndValue(QRect(430, 600, 201, 111));
+            animation4->setEndValue(QRect(470, 480, 221, 131));
 
             QPropertyAnimation* animation5 = new QPropertyAnimation(ui->frame_6, "geometry");
-            animation5->setDuration(1000);
+            animation5->setDuration(1500);
             animation5->setEasingCurve(QEasingCurve::Linear);
-            animation5->setEndValue(QRect(230, 600, 211, 111));
+            animation5->setEndValue(QRect(220, 480, 231, 131));
 
             animation1->start();
             animation2->start();
@@ -180,29 +180,29 @@ void WithdrawFunds::animationButton()
         {
             count = 0;
             QPropertyAnimation* animation1 = new QPropertyAnimation(ui->frame_2, "geometry");
-            animation1->setDuration(1000);
+            animation1->setDuration(1500);
             animation1->setEasingCurve(QEasingCurve::Linear);
-            animation1->setEndValue(QRect(340, 410, 191, 111));
+            animation1->setEndValue(QRect(360, 230, 211, 131));
 
             QPropertyAnimation* animation2 = new QPropertyAnimation(ui->frame_3, "geometry");
-            animation2->setDuration(1000);
+            animation2->setDuration(1500);
             animation2->setEasingCurve(QEasingCurve::Linear);
-            animation2->setEndValue(QRect(500, 470, 201, 111));
+            animation2->setEndValue(QRect(540, 330, 221, 131));
 
             QPropertyAnimation* animation3 = new QPropertyAnimation(ui->frame_4, "geometry");
-            animation3->setDuration(1000);
+            animation3->setDuration(1500);
             animation3->setEasingCurve(QEasingCurve::Linear);
-            animation3->setEndValue(QRect(430, 600, 201, 111));
+            animation3->setEndValue(QRect(470, 480, 221, 131));
 
             QPropertyAnimation* animation4 = new QPropertyAnimation(ui->frame_5, "geometry");
-            animation4->setDuration(1000);
+            animation4->setDuration(1500);
             animation4->setEasingCurve(QEasingCurve::Linear);
-            animation4->setEndValue(QRect(230, 600, 201, 111));
+            animation4->setEndValue(QRect(220, 480, 221, 131));
 
             QPropertyAnimation* animation5 = new QPropertyAnimation(ui->frame_6, "geometry");
-            animation5->setDuration(1000);
+            animation5->setDuration(1500);
             animation5->setEasingCurve(QEasingCurve::Linear);
-            animation5->setEndValue(QRect(160, 470, 211, 111));
+            animation5->setEndValue(QRect(160, 340, 231, 131));
 
             animation1->start();
             animation2->start();
