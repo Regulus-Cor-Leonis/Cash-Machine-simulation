@@ -15,6 +15,9 @@ public:
     explicit ExceedingWithdrawalAmount(QWidget *parent = nullptr);
     ~ExceedingWithdrawalAmount();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::ExceedingWithdrawalAmount *ui;
 };

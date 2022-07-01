@@ -15,6 +15,9 @@ public:
     explicit SuccessfulDelete(QWidget *parent = nullptr);
     ~SuccessfulDelete();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::SuccessfulDelete *ui;
 };

@@ -14,3 +14,10 @@ SuccessfulUpdate::~SuccessfulUpdate()
 {
     delete ui;
 }
+
+void SuccessfulUpdate::on_pushButton_2_clicked()
+{
+    this->close();
+
+}
+

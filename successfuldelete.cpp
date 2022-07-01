@@ -14,3 +14,10 @@ SuccessfulDelete::~SuccessfulDelete()
 {
     delete ui;
 }
+
+void SuccessfulDelete::on_pushButton_2_clicked()
+{
+    this->close();
+
+}
+
