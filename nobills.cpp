@@ -13,3 +13,9 @@ NoBills::~NoBills()
 {
     delete ui;
 }
+
+void NoBills::on_pushButton_2_clicked()
+{
+    this->close();
+}
+

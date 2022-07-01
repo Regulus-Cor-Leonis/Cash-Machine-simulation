@@ -14,3 +14,9 @@ SuccessfulAdd::~SuccessfulAdd()
 {
     delete ui;
 }
+
+void SuccessfulAdd::on_pushButton_2_clicked()
+{
+    this->close();
+}
+

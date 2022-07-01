@@ -15,6 +15,9 @@ public:
     explicit SuccessfulUpdate(QWidget *parent = nullptr);
     ~SuccessfulUpdate();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::SuccessfulUpdate *ui;
 };

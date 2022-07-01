@@ -1,6 +1,9 @@
 #include "adminpanel.h"
 #include "ui_adminpanel.h"
 #include "mainwindow.h"
+#include "successfuladd.h"
+#include "successfuldelete.h"
+#include "successfulupdate.h"
 
 
 AdminPanel::AdminPanel(QWidget *parent) :
@@ -50,6 +53,8 @@ void AdminPanel::on_pushButton_3_clicked()
         cash.setCount(ui->lineEdit_2->text().toInt());
         db->insertBillsIntoDB(cash);
         ui->tableView->setModel(db->getBillsModelFromDB());
+        SuccessfulAdd *w = new SuccessfulAdd;
+        w->show();
     }
 }
 
@@ -63,6 +68,8 @@ void AdminPanel::on_pushButton_4_clicked()
         cash.setCount(ui->lineEdit_2->text().toInt());
         db->updateBillsInDB(cash);
         ui->tableView->setModel(db->getBillsModelFromDB());
+        SuccessfulUpdate *w = new SuccessfulUpdate;
+        w->show();
     }
 }
 
@@ -76,6 +83,8 @@ void AdminPanel::on_pushButton_5_clicked()
         const uint bill = ui->tableView->model()->index(rowIndex, 0).data().toUInt();
         db->deleteBillsFromDB(bill);
         ui->tableView->setModel(db->getBillsModelFromDB());
+        SuccessfulDelete *w = new SuccessfulDelete;
+        w->show();
     }
 }
 

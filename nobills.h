@@ -15,6 +15,9 @@ public:
     explicit NoBills(QWidget *parent = nullptr);
     ~NoBills();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::NoBills *ui;
 };

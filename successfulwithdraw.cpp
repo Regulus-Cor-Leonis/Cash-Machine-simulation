@@ -25,7 +25,7 @@ SuccessfulWithdraw::SuccessfulWithdraw(QWidget *parent) :
     timerA->start(1000);
     */
 
-    this->setFixedSize(751, 501);
+    this->setFixedSize(900, 500);
 }
 
 SuccessfulWithdraw::~SuccessfulWithdraw()

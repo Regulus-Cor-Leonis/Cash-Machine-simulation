@@ -13,3 +13,9 @@ ExceedingWithdrawalAmount::~ExceedingWithdrawalAmount()
 {
     delete ui;
 }
+
+void ExceedingWithdrawalAmount::on_pushButton_2_clicked()
+{
+    this->close();
+}
+
