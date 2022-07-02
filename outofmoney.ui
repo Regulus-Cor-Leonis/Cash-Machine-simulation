@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Error</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="sources.qrc">
+    <normaloff>:/images/sources/No.png</normaloff>:/images/sources/No.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label_2">
@@ -91,6 +95,9 @@
        <family>Algerian</family>
        <pointsize>12</pointsize>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {

@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Dragon cash machin</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="sources.qrc">
+    <normaloff>:/images/sources/Logo.png</normaloff>:/images/sources/Logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -44,7 +48,7 @@
      <rect>
       <x>1080</x>
       <y>0</y>
-      <width>71</width>
+      <width>65</width>
       <height>41</height>
      </rect>
     </property>
@@ -169,6 +173,9 @@
        <pointsize>14</pointsize>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	background-color: rgb(82, 137, 225);
@@ -287,6 +294,9 @@ QPushButton:pressed {
        <family>Algerian</family>
        <pointsize>14</pointsize>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
@@ -407,6 +417,9 @@ QPushButton:pressed {
        <pointsize>14</pointsize>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	background-color: rgb(82, 137, 225);
@@ -526,6 +539,9 @@ QPushButton:pressed {
        <pointsize>14</pointsize>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	background-color: rgb(82, 137, 225);
@@ -644,6 +660,9 @@ QPushButton:pressed {
        <family>Algerian</family>
        <pointsize>14</pointsize>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
@@ -830,6 +849,9 @@ QPushButton:pressed {
        <pointsize>14</pointsize>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	background-color: rgb(255, 68, 35);
@@ -948,6 +970,9 @@ QPushButton:pressed {
        <family>Algerian</family>
        <pointsize>14</pointsize>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
