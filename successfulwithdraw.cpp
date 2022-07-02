@@ -1,17 +1,16 @@
 #include "successfulwithdraw.h"
 #include "ui_successfulwithdraw.h"
 
-SuccessfulWithdraw::SuccessfulWithdraw(QWidget *parent) :
+SuccessfulWithdraw::SuccessfulWithdraw(QList<int> resFunds, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::SuccessfulWithdraw)
 {
     ui->setupUi(this);
 
-    /*
-    list << 1 << 10 << 100 << 1000 << 10000; //filling list
+    this->resFunds = resFunds;
 
     //Number of animations
-    count = 5 * 5 - 1; //* 5 - 1 necessary action
+    count = resFunds.length() * 5 - 1; //* 5 - 1 necessary action
     //Countdown to stop
     iteration = 0;
     //Go to next banknot
@@ -23,9 +22,20 @@ SuccessfulWithdraw::SuccessfulWithdraw(QWidget *parent) :
     connect(timerA, SIGNAL(timeout()), this, SLOT(animationCash()));
     connect(timerA, SIGNAL(timeout()), this, SLOT(stop()));
     timerA->start(1000);
-    */
 
     this->setFixedSize(900, 500);
+    ui->tableWidget->setColumnCount(1);
+    ui->tableWidget->setRowCount(resFunds.length()-1);
+    ui->tableWidget->horizontalHeader()->hide();
+    ui->tableWidget->verticalHeader()->hide();
+    ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    QHeaderView* header = ui->tableWidget->horizontalHeader();
+    header->setSectionResizeMode(QHeaderView::Stretch);
+    for (int i = 1; i < ui->tableWidget->rowCount()+1; ++i){
+        QTableWidgetItem *item = new QTableWidgetItem;
+        item->setText(QString::number(resFunds.at(i)));
+        ui->tableWidget->setItem(0, i-1, item);
+    }
 }
 
 SuccessfulWithdraw::~SuccessfulWithdraw()
@@ -38,13 +48,13 @@ void SuccessfulWithdraw::on_pushButton_2_clicked()
     this->close();
 }
 
-/*
+
 void SuccessfulWithdraw::animationCash()
 {
     if (countA == 0)
     {
         countA = countA + 1;
-        ui->label_5->setText(QString::number(list[iterator]));
+        ui->label_5->setText(QString::number(resFunds[iterator]));
         QPropertyAnimation* animation1 = new QPropertyAnimation(ui->label_3, "geometry");
         animation1->setDuration(1000);
 
@@ -122,4 +132,3 @@ void SuccessfulWithdraw::stop()
         timerA->stop();
     }
 }
-*/

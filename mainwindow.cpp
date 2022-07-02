@@ -5,14 +5,8 @@
 #include "ui_withdrawfunds.h"
 
 #include "adminpanel.h"
-#include "ui_adminpanel.h"
-
 #include "exitmessage.h"
-#include "ui_exitmessage.h"
-
 #include "password.h"
-#include "ui_password.h"
-
 #include <QScreen>
 
 
@@ -56,6 +50,7 @@ void MainWindow::on_pushButton_2_clicked()
     WithdrawFunds *w = new WithdrawFunds;
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->setATM(ATM);
+    w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
     this->close();
 }
@@ -65,10 +60,7 @@ void MainWindow::on_pushButton_3_clicked()
     Password *w = new Password;
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->setATM(ATM);
+    w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
     this->close();
-    //-------------------------------------------------------------------------------------
-    //SuccessfulWithdraw *w = new SuccessfulWithdraw;
-    //w->show();
-    //this->close();
 }
