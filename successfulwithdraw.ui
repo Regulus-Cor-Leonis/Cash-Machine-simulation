@@ -46,10 +46,10 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>385</x>
+      <x>380</x>
       <y>30</y>
-      <width>401</width>
-      <height>101</height>
+      <width>400</width>
+      <height>100</height>
      </rect>
     </property>
     <property name="font">
@@ -183,21 +183,6 @@ QPushButton:pressed {
     <zorder>label_7</zorder>
     <zorder>label_8</zorder>
     <zorder>pushButton_2</zorder>
-   </widget>
-   <widget class="QTableView" name="tableView">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>200</y>
-      <width>461</width>
-      <height>192</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Algerian</family>
-     </font>
-    </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -387,10 +372,19 @@ QPushButton:pressed {
      <string/>
     </property>
    </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>190</y>
+      <width>311</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
    <zorder>label_2</zorder>
    <zorder>label_6</zorder>
    <zorder>frame_2</zorder>
-   <zorder>tableView</zorder>
    <zorder>label</zorder>
    <zorder>frame</zorder>
    <zorder>label_3</zorder>
@@ -400,6 +394,7 @@ QPushButton:pressed {
    <zorder>label_13</zorder>
    <zorder>label_14</zorder>
    <zorder>label_15</zorder>
+   <zorder>tableWidget</zorder>
   </widget>
  </widget>
  <resources>

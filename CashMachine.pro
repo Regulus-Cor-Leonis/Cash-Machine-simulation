@@ -11,7 +11,6 @@ CONFIG += c++17
 
 SOURCES += \
     adminpanel.cpp \
-    cash.cpp \
     db.cpp \
     errorpassword.cpp \
     exceedingwithdrawalamount.cpp \

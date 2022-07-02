@@ -310,24 +310,25 @@ void WithdrawFunds::issuance(QList<int> money, QList<int> funds, int request){
     qDebug()<<"request="<<request;
 
     int sum=getSum(money);
-    //qDebug()<<"Suma="<<sum;
 
     if (sum<request){
         qDebug()<<"Not enough funds at the ATM ";
-        OutOfMoney *w=new OutOfMoney;
+        OutOfMoney *w = new OutOfMoney;
+        w->setAttribute(Qt::WA_DeleteOnClose);
         w->show();
         return;
     } else {
         int i=0;
         if (minCountOfBills(i,money,funds,request,0)) {
             cout<<"TRUE"<<endl;
-            SuccessfulWithdraw* w= new SuccessfulWithdraw;
-            w->setresFunds(this->resFunds);
+            SuccessfulWithdraw* w = new SuccessfulWithdraw(this->resFunds);
+            w->setAttribute(Qt::WA_DeleteOnClose);
             w->show();
         }
         else {
             cout<<"FALSE"<<endl;
-            NoBills* w=new NoBills;
+            NoBills* w = new NoBills;
+            w->setAttribute(Qt::WA_DeleteOnClose);
             w->show();
         }
     }
@@ -341,7 +342,6 @@ void WithdrawFunds::on_pushButton_7_clicked()
         ATM=db->getBillsFromDB();
     }
 
-    //qDebug()
     qDebug()<<"Money in format Denomination Count";
     QList<Cash>::Iterator i;
     for (i=ATM.begin();i!=ATM.end();++i){
@@ -352,6 +352,7 @@ void WithdrawFunds::on_pushButton_7_clicked()
     int request=ui->lineEdit->text().toLongLong(&ok,10);
     if (ok==false){
         ReadError *w=new ReadError;
+        w->setAttribute(Qt::WA_DeleteOnClose);
         w->show();
         ui->lineEdit->setText("");
     }

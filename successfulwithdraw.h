@@ -22,16 +22,14 @@ class SuccessfulWithdraw : public QMainWindow
     QList<int> resFunds;
 
 public:
-    explicit SuccessfulWithdraw(QWidget *parent = nullptr);
+    explicit SuccessfulWithdraw(QList<int> resFunds, QWidget *parent = nullptr);
     ~SuccessfulWithdraw();
     //----------------------------------------------------
-    QList<int> list;
     int count;
     int iteration;
     int iterator;
     int countA;
     QTimer* timerA;
-    void setresFunds(QList<int> funds){this->resFunds=funds;}
 
 private slots:
     void on_pushButton_2_clicked();
@@ -39,10 +37,10 @@ private slots:
 private:
     Ui::SuccessfulWithdraw *ui;
 
-/*private slots:
+private slots:
     void animationCash();
     void stop();
-*/
+
 };
 
 #endif // SUCCESSFULWITHDRAW_H
