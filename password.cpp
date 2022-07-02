@@ -11,7 +11,7 @@ Password::Password(QWidget *parent) :
     ui->setupUi(this);
 
     ui->lineEdit->setPlaceholderText("Enter password");
-    this->setFixedSize(430, 220);
+    this->setFixedSize(430, 200);
 }
 
 Password::~Password()

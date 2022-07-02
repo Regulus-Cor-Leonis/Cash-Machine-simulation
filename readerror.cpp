@@ -6,7 +6,7 @@ ReadError::ReadError(QWidget *parent) :
     ui(new Ui::ReadError)
 {
     ui->setupUi(this);
-    this->setFixedSize(470, 220);
+    this->setFixedSize(470, 200);
 }
 
 ReadError::~ReadError()

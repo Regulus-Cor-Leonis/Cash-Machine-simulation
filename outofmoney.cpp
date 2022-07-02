@@ -6,7 +6,7 @@ OutOfMoney::OutOfMoney(QWidget *parent) :
     ui(new Ui::OutOfMoney)
 {
     ui->setupUi(this);
-    this->setFixedSize(500, 210);
+    this->setFixedSize(500, 190);
 }
 
 OutOfMoney::~OutOfMoney()
