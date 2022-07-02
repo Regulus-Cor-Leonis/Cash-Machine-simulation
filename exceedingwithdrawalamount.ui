@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="sources.qrc">
+    <normaloff>:/images/sources/No.png</normaloff>:/images/sources/No.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame_2">
     <property name="enabled">
@@ -45,6 +49,9 @@
        <family>Algerian</family>
        <pointsize>12</pointsize>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
