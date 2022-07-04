@@ -41,7 +41,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    SuccessfulUpdate *w = new SuccessfulUpdate;
+    ExitMessage *w = new ExitMessage;
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
 }
