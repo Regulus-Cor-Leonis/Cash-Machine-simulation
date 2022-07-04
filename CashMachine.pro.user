@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.2, 2022-07-04T05:40:21. -->
+<!-- Written by QtCreator 7.0.2, 2022-07-04T06:03:46. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -242,7 +242,6 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/2-3coursenulp/3coursenulp/Practice/Cash-Machine-simulation/CashMachine.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/2-3coursenulp/3coursenulp/Practice/Cash-Machine-simulation/CashMachine.pro</value>
-    <value type="QString" key="RunConfiguration.Arguments">1000=5 500=4 250=4 200=4 100=4 50=4 30=4</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>

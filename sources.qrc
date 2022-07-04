@@ -45,5 +45,9 @@
         <file>sources/TwoArrowV2.png</file>
         <file>sources/BlueDragonPos5.png</file>
         <file>sources/RedDragonPos6.png</file>
+        <file>sources/Logo.png</file>
+        <file>sources/Logo2.png</file>
+        <file>sources/Logo2V2.png</file>
+        <file>sources/Information.png</file>
     </qresource>
 </RCC>

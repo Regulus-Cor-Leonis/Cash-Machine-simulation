@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Information</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="sources.qrc">
+    <normaloff>:/images/sources/Information.png</normaloff>:/images/sources/Information.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label_2">
@@ -46,10 +50,10 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>385</x>
+      <x>380</x>
       <y>30</y>
-      <width>401</width>
-      <height>101</height>
+      <width>400</width>
+      <height>100</height>
      </rect>
     </property>
     <property name="font">
@@ -96,6 +100,9 @@
        <family>Algerian</family>
        <pointsize>12</pointsize>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
@@ -375,25 +382,12 @@ QPushButton:pressed {
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>420</x>
       <y>190</y>
-      <width>421</width>
-      <height>211</height>
+      <width>311</width>
+      <height>192</height>
      </rect>
     </property>
-    <attribute name="horizontalHeaderDefaultSectionSize">
-     <number>209</number>
-    </attribute>
-    <column>
-     <property name="text">
-      <string>Value</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Count</string>
-     </property>
-    </column>
    </widget>
    <zorder>label_2</zorder>
    <zorder>label_6</zorder>

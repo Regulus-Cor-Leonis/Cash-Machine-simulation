@@ -6,7 +6,7 @@ NoBills::NoBills(QWidget *parent) :
     ui(new Ui::NoBills)
 {
     ui->setupUi(this);
-    this->setFixedSize(470, 220);
+    this->setFixedSize(470, 200);
 }
 
 NoBills::~NoBills()

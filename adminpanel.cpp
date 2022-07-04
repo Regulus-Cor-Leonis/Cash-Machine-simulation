@@ -53,6 +53,7 @@ void AdminPanel::on_pushButton_3_clicked()
         db->insertBillsIntoDB(cash);
         ui->tableView->setModel(db->getBillsModelFromDB());
         SuccessfulAdd *w = new SuccessfulAdd;
+        w->setAttribute(Qt::WA_DeleteOnClose);
         w->show();
     }
 }
@@ -68,6 +69,7 @@ void AdminPanel::on_pushButton_4_clicked()
         db->updateBillsInDB(cash);
         ui->tableView->setModel(db->getBillsModelFromDB());
         SuccessfulUpdate *w = new SuccessfulUpdate;
+        w->setAttribute(Qt::WA_DeleteOnClose);
         w->show();
     }
 }
@@ -83,6 +85,7 @@ void AdminPanel::on_pushButton_5_clicked()
         db->deleteBillsFromDB(bill);
         ui->tableView->setModel(db->getBillsModelFromDB());
         SuccessfulDelete *w = new SuccessfulDelete;
+        w->setAttribute(Qt::WA_DeleteOnClose);
         w->show();
     }
 }
@@ -104,6 +107,7 @@ void AdminPanel::on_tableView_clicked(const QModelIndex &index)
 void AdminPanel::on_pushButton_10_clicked()
 {
     MainWindow *w=new MainWindow;
+    w->setAttribute(Qt::WA_DeleteOnClose);
     w->setATM(ATM);
     w->show();
     this->close();
