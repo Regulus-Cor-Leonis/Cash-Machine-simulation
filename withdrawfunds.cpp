@@ -6,6 +6,7 @@
 #include "successfulwithdraw.h"
 #include "outofmoney.h"
 #include "nobills.h"
+#include "exceedingwithdrawalamount.h"
 #include <iostream>
 
 using namespace std;
@@ -301,16 +302,25 @@ bool WithdrawFunds::minCountOfBills(int i, QList<int> money, QList<int> funds, i
         }
         return minCountOfBills(h+2,money,funds,request,sum);
     }
-    //зробити один ретурн
 }
 
 
-void WithdrawFunds::issuance(QList<int> money, QList<int> funds, int request){
+void WithdrawFunds::issuance(QList<Cash>* ptrATM, int request){
 
     qDebug()<<"request="<<request;
 
-    int sum=getSum(money);
+    QList<Cash>::Iterator i;
+    QList<int> money;
+    money.append(0);
+    for(i=ptrATM->begin();i!=ptrATM->end();++i){
+        int j=0;
+        for(j=0;j<i->getCount();j++){
+            money.append(i->getDenomination());
+        }
+    }
 
+    int sum=getSum(money);
+    QList<int> funds;
     if (sum<request){
         qDebug()<<"Not enough funds at the ATM ";
         OutOfMoney *w = new OutOfMoney;
@@ -318,18 +328,27 @@ void WithdrawFunds::issuance(QList<int> money, QList<int> funds, int request){
         w->show();
         return;
     } else {
-        int i=0;
-        if (minCountOfBills(i,money,funds,request,0)) {
-            cout<<"TRUE"<<endl;
-            SuccessfulWithdraw* w = new SuccessfulWithdraw(this->resFunds);
+        if (sum==request){
+            resFunds=money;
+            resFunds.removeFirst();
+            SuccessfulWithdraw* w = new SuccessfulWithdraw(resFunds);
             w->setAttribute(Qt::WA_DeleteOnClose);
             w->show();
-        }
-        else {
-            cout<<"FALSE"<<endl;
-            NoBills* w = new NoBills;
-            w->setAttribute(Qt::WA_DeleteOnClose);
-            w->show();
+        } else {
+            int i=0;
+            if (minCountOfBills(i,money,funds,request,0)) {
+                cout<<"TRUE"<<endl;
+                resFunds.removeFirst();
+                SuccessfulWithdraw* w = new SuccessfulWithdraw(this->resFunds);
+                w->setAttribute(Qt::WA_DeleteOnClose);
+                w->show();
+            }
+            else {
+                cout<<"FALSE"<<endl;
+                NoBills* w = new NoBills;
+                w->setAttribute(Qt::WA_DeleteOnClose);
+                w->show();
+            }
         }
     }
 }
@@ -341,15 +360,14 @@ void WithdrawFunds::on_pushButton_7_clicked()
         DB* db = DB::getInstance();
         ATM=db->getBillsFromDB();
     }
-
-    qDebug()<<"Money in format Denomination Count";
+    ATM=sortDescending(ATM);
+    QList<Cash>*ptrATM=&ATM;
     QList<Cash>::Iterator i;
-    for (i=ATM.begin();i!=ATM.end();++i){
-        qDebug()<<"Money "<<i->getDenomination()<<" "<<i->getCount();
+    for(i=ATM.begin();i!=ATM.end();++i){
+        cout<<i->getDenomination()<<" "<<i->getCount()<<endl;
     }
 
-
-    int request=ui->lineEdit->text().toLongLong(&ok,10);
+    int request=ui->lineEdit->text().toInt(&ok,10);
     if (ok==false){
         ReadError *w=new ReadError;
         w->setAttribute(Qt::WA_DeleteOnClose);
@@ -357,29 +375,23 @@ void WithdrawFunds::on_pushButton_7_clicked()
         ui->lineEdit->setText("");
     }
     else{
-
-        ATM=sortDescending(ATM);
-        QList<Cash>*ptrATM=&ATM;
-        QList<Cash>::Iterator i;
-        QList<int> money;
-        QList<int> index;
-        money.append(0);
-        for(i=ptrATM->begin();i!=ptrATM->end();++i){
-            int j=0;
-            for(j=0;j<i->getCount();j++){
-                money.append(i->getDenomination());
-            }
-        }
-        QList<int>::Iterator j;
-        issuance(money,index,request);
-        for (j=resFunds.begin();j!=resFunds.end();++j){
-            for(i=ptrATM->begin();i!=ptrATM->end();++i){
-                if (i->getDenomination()==*j){
-                    i->setCount(i->getCount()-1);
-                    break;
+        if (request>=10000000){
+            ExceedingWithdrawalAmount* w=new ExceedingWithdrawalAmount;
+            w->show();
+        } else{
+            cout<<"Check"<<endl;
+            issuance(ptrATM,request);
+            QList<Cash>::Iterator i;
+            QList<int>::Iterator j;
+            for (j=resFunds.begin();j!=resFunds.end();++j){
+                for(i=ptrATM->begin();i!=ptrATM->end();++i){
+                    if (i->getDenomination()==*j){
+                        i->setCount(i->getCount()-1);
+                        break;
+                    }
                 }
+                cout<<"resFunds: "<<*j<<endl;
             }
-            cout<<"resFunds: "<<*j<<endl;
         }
     }
 }
@@ -391,8 +403,20 @@ void WithdrawFunds::on_pushButton_2_clicked()
         DB* db = DB::getInstance();
         ATM=db->getBillsFromDB();
     }
-    ATM=sortAscending(ATM);
-    //issuance(ATM,request);
+    ATM=sortDescending(ATM);
+    QList<Cash>*ptrATM=&ATM;
+    issuance(ptrATM,request);
+    QList<Cash>::Iterator i;
+    QList<int>::Iterator j;
+    for (j=resFunds.begin();j!=resFunds.end();++j){
+        for(i=ptrATM->begin();i!=ptrATM->end();++i){
+            if (i->getDenomination()==*j){
+                i->setCount(i->getCount()-1);
+                break;
+            }
+        }
+        cout<<"resFunds: "<<*j<<endl;
+    }
 }
 
 void WithdrawFunds::on_pushButton_3_clicked()
@@ -402,8 +426,20 @@ void WithdrawFunds::on_pushButton_3_clicked()
         DB* db = DB::getInstance();
         ATM=db->getBillsFromDB();
     }
-    ATM=sortAscending(ATM);
-    //issuance(ATM,request);
+    ATM=sortDescending(ATM);
+    QList<Cash>*ptrATM=&ATM;
+    issuance(ptrATM,request);
+    QList<Cash>::Iterator i;
+    QList<int>::Iterator j;
+    for (j=resFunds.begin();j!=resFunds.end();++j){
+        for(i=ptrATM->begin();i!=ptrATM->end();++i){
+            if (i->getDenomination()==*j){
+                i->setCount(i->getCount()-1);
+                break;
+            }
+        }
+        cout<<"resFunds: "<<*j<<endl;
+    }
 }
 
 
@@ -414,8 +450,20 @@ void WithdrawFunds::on_pushButton_4_clicked()
         DB* db = DB::getInstance();
         ATM=db->getBillsFromDB();
     }
-    ATM=sortAscending(ATM);
-    //issuance(ATM,request);
+    ATM=sortDescending(ATM);
+    QList<Cash>*ptrATM=&ATM;
+    issuance(ptrATM,request);
+    QList<Cash>::Iterator i;
+    QList<int>::Iterator j;
+    for (j=resFunds.begin();j!=resFunds.end();++j){
+        for(i=ptrATM->begin();i!=ptrATM->end();++i){
+            if (i->getDenomination()==*j){
+                i->setCount(i->getCount()-1);
+                break;
+            }
+        }
+        cout<<"resFunds: "<<*j<<endl;
+    }
 }
 
 
@@ -426,8 +474,20 @@ void WithdrawFunds::on_pushButton_5_clicked()
         DB* db = DB::getInstance();
         ATM=db->getBillsFromDB();
     }
-    ATM=sortAscending(ATM);
-    //issuance(ATM,request);
+    ATM=sortDescending(ATM);
+    QList<Cash>*ptrATM=&ATM;
+    issuance(ptrATM,request);
+    QList<Cash>::Iterator i;
+    QList<int>::Iterator j;
+    for (j=resFunds.begin();j!=resFunds.end();++j){
+        for(i=ptrATM->begin();i!=ptrATM->end();++i){
+            if (i->getDenomination()==*j){
+                i->setCount(i->getCount()-1);
+                break;
+            }
+        }
+        cout<<"resFunds: "<<*j<<endl;
+    }
 }
 
 
@@ -438,14 +498,27 @@ void WithdrawFunds::on_pushButton_6_clicked()
         DB* db = DB::getInstance();
         ATM=db->getBillsFromDB();
     }
-    ATM=sortAscending(ATM);
-    //issuance(ATM,request);
+    ATM=sortDescending(ATM);
+    QList<Cash>*ptrATM=&ATM;
+    issuance(ptrATM,request);
+    QList<Cash>::Iterator i;
+    QList<int>::Iterator j;
+    for (j=resFunds.begin();j!=resFunds.end();++j){
+        for(i=ptrATM->begin();i!=ptrATM->end();++i){
+            if (i->getDenomination()==*j){
+                i->setCount(i->getCount()-1);
+                break;
+            }
+        }
+        cout<<"resFunds: "<<*j<<endl;
+    }
 }
 
 
 void WithdrawFunds::on_pushButton_8_clicked()
 {
     MainWindow *w=new MainWindow;
+    w->setAttribute(Qt::WA_DeleteOnClose);
     w->setATM(ATM);
     w->show();
     this->close();

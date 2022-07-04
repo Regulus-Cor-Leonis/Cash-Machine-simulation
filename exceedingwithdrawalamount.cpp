@@ -6,7 +6,7 @@ ExceedingWithdrawalAmount::ExceedingWithdrawalAmount(QWidget *parent) :
     ui(new Ui::ExceedingWithdrawalAmount)
 {
     ui->setupUi(this);
-    this->setFixedSize(520, 210);
+    this->setFixedSize(520, 195);
 }
 
 ExceedingWithdrawalAmount::~ExceedingWithdrawalAmount()

@@ -6,7 +6,7 @@ SuccessfulDelete::SuccessfulDelete(QWidget *parent) :
     ui(new Ui::SuccessfulDelete)
 {
     ui->setupUi(this);
-    this->setFixedSize(470, 200);
+    this->setFixedSize(470, 180);
 
 }
 

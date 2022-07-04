@@ -6,7 +6,7 @@ ErrorPassword::ErrorPassword(QWidget *parent) :
     ui(new Ui::ErrorPassword)
 {
     ui->setupUi(this);
-    this->setFixedSize(430, 210);
+    this->setFixedSize(430, 190);
 }
 
 ErrorPassword::~ErrorPassword()

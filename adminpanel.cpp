@@ -107,6 +107,7 @@ void AdminPanel::on_tableView_clicked(const QModelIndex &index)
 void AdminPanel::on_pushButton_10_clicked()
 {
     MainWindow *w=new MainWindow;
+    w->setAttribute(Qt::WA_DeleteOnClose);
     w->setATM(ATM);
     w->show();
     this->close();

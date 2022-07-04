@@ -48,8 +48,8 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     WithdrawFunds *w = new WithdrawFunds;
-    w->setATM(ATM);
     w->setAttribute(Qt::WA_DeleteOnClose);
+    w->setATM(ATM);
     w->show();
     this->close();
 }
@@ -57,8 +57,8 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_pushButton_3_clicked()
 {
     Password *w = new Password;
-    w->setATM(ATM);
     w->setAttribute(Qt::WA_DeleteOnClose);
+    w->setATM(ATM);
     w->show();
     this->close();
 }

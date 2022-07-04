@@ -6,7 +6,7 @@ SuccessfulUpdate::SuccessfulUpdate(QWidget *parent) :
     ui(new Ui::SuccessfulUpdate)
 {
     ui->setupUi(this);
-    this->setFixedSize(470, 200);
+    this->setFixedSize(470, 180);
 
 }
 
