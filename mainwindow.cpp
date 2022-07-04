@@ -7,6 +7,7 @@
 #include "adminpanel.h"
 #include "exitmessage.h"
 #include "password.h"
+#include "successfulupdate.h"
 #include <QScreen>
 
 
@@ -40,7 +41,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    ExitMessage *w = new ExitMessage;
+    SuccessfulUpdate *w = new SuccessfulUpdate;
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
 }
