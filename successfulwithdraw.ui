@@ -388,6 +388,11 @@ QPushButton:pressed {
       <height>192</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Algerian</family>
+     </font>
+    </property>
    </widget>
    <zorder>label_2</zorder>
    <zorder>label_6</zorder>
