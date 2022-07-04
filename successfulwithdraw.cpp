@@ -1,5 +1,9 @@
 #include "successfulwithdraw.h"
+#include "cash.h"
 #include "ui_successfulwithdraw.h"
+#include<iostream>
+
+using namespace std;
 
 SuccessfulWithdraw::SuccessfulWithdraw(QWidget *parent) :
     QMainWindow(parent),
@@ -25,6 +29,29 @@ SuccessfulWithdraw::SuccessfulWithdraw(QWidget *parent) :
     timerA->start(1000);
     */
 
+    int q=1;
+    QList<Cash> funds;
+    for(int i=1;i<resFunds.length()-1;++i){
+        if (resFunds[i]!=resFunds[i+1]){
+            Cash bill;
+            bill.setDenomination(resFunds[i]);
+            bill.setCount(q);
+            funds.append(bill);
+            q=1;
+        } else{
+            ++q;
+        }
+    }
+    Cash bill;
+    bill.setDenomination(resFunds[resFunds.length()-1]);
+    bill.setCount(q);
+    funds.append(bill);
+    ui->tableWidget->setRowCount(funds.length());
+    for(int i=0;i<funds.length();i++){
+        ui->tableWidget->item(i,0)->setText(QString::number(funds[i].getDenomination()));
+        ui->tableWidget->item(i,1)->setText(QString::number(funds[i].getCount()));
+        cout<<funds[i].getDenomination()<<" "<<funds[i].getCount()<<endl;
+    }
     this->setFixedSize(900, 500);
 }
 
