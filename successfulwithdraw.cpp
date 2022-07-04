@@ -1,5 +1,9 @@
 #include "successfulwithdraw.h"
+#include "cash.h"
 #include "ui_successfulwithdraw.h"
+#include<iostream>
+
+using namespace std;
 
 SuccessfulWithdraw::SuccessfulWithdraw(QList<int> resFunds, QWidget *parent) :
     QMainWindow(parent),
@@ -24,18 +28,18 @@ SuccessfulWithdraw::SuccessfulWithdraw(QList<int> resFunds, QWidget *parent) :
     timerA->start(500);
 
     this->setFixedSize(900, 500);
-    ui->tableWidget->setColumnCount(1);
-    ui->tableWidget->setRowCount(resFunds.length()-1);
-    ui->tableWidget->horizontalHeader()->hide();
-    ui->tableWidget->verticalHeader()->hide();
-    ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    QHeaderView* header = ui->tableWidget->horizontalHeader();
-    header->setSectionResizeMode(QHeaderView::Stretch);
-    for (int i = 1; i < ui->tableWidget->rowCount()+1; ++i){
-        QTableWidgetItem *item = new QTableWidgetItem;
-        item->setText(QString::number(resFunds.at(i)));
-        ui->tableWidget->setItem(0, i-1, item);
-    }
+        ui->tableWidget->setColumnCount(1);
+        ui->tableWidget->setRowCount(resFunds.length());
+        ui->tableWidget->horizontalHeader()->hide();
+        ui->tableWidget->verticalHeader()->hide();
+        ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        QHeaderView* header = ui->tableWidget->horizontalHeader();
+        header->setSectionResizeMode(QHeaderView::Stretch);
+        for (int i = 0; i < ui->tableWidget->rowCount(); ++i){
+            QTableWidgetItem *item = new QTableWidgetItem;
+            item->setText(QString::number(resFunds.at(i)));
+            ui->tableWidget->setItem(0, i, item);
+        }
 }
 
 SuccessfulWithdraw::~SuccessfulWithdraw()

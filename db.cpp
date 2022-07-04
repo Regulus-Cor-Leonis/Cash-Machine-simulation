@@ -18,7 +18,7 @@ DB *DB::getInstance()
 {
     if (instance == nullptr){
         instance = new DB();
-        instance->dbConnect("localhost", "CashMachine");
+        instance->dbConnect("DESKTOP-BLMSA4C", "CashMachine");
     }
     return instance;
 }

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dragon cash machin</string>
+   <string>Dragon cash machine</string>
   </property>
   <property name="windowIcon">
    <iconset resource="sources.qrc">
