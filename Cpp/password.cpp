@@ -1,8 +1,8 @@
-#include "password.h"
+#include "Headers\password.h"
 #include "ui_password.h"
-#include "adminpanel.h"
-#include "errorpassword.h"
-#include "mainwindow.h"
+#include "Headers\adminpanel.h"
+#include "Headers\errorpassword.h"
+#include "Headers\mainwindow.h"
 
 Password::Password(QWidget *parent) :
     QMainWindow(parent),

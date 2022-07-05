@@ -1,4 +1,4 @@
-#include "successfuladd.h"
+#include "Headers\successfuladd.h"
 #include "ui_successfuladd.h"
 
 SuccessfulAdd::SuccessfulAdd(QWidget *parent) :

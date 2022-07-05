@@ -1,12 +1,12 @@
-#include "withdrawfunds.h"
+#include "Headers\withdrawfunds.h"
 #include "ui_withdrawfunds.h"
-#include "readerror.h"
-#include "mainwindow.h"
-#include "db.h"
-#include "successfulwithdraw.h"
-#include "outofmoney.h"
-#include "nobills.h"
-#include "exceedingwithdrawalamount.h"
+#include "Headers\readerror.h"
+#include "Headers\mainwindow.h"
+#include "Headers\db.h"
+#include "Headers\successfulwithdraw.h"
+#include "Headers\outofmoney.h"
+#include "Headers\nobills.h"
+#include "Headers\exceedingwithdrawalamount.h"
 #include <iostream>
 
 using namespace std;

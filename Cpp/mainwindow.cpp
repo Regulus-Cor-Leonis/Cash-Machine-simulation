@@ -1,13 +1,13 @@
-#include "mainwindow.h"
+#include "Headers\mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "withdrawfunds.h"
+#include "Headers\withdrawfunds.h"
 #include "ui_withdrawfunds.h"
 
-#include "adminpanel.h"
-#include "exitmessage.h"
-#include "password.h"
-#include "successfulupdate.h"
+#include "Headers\adminpanel.h"
+#include "Headers\exitmessage.h"
+#include "Headers\password.h"
+#include "Headers\successfulupdate.h"
 #include <QScreen>
 
 

@@ -1,4 +1,4 @@
-#include "successfuldelete.h"
+#include "Headers\successfuldelete.h"
 #include "ui_successfuldelete.h"
 
 SuccessfulDelete::SuccessfulDelete(QWidget *parent) :

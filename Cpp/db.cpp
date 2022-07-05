@@ -1,4 +1,4 @@
-#include "db.h"
+#include "Headers\db.h"
 #include <QDebug>
 #include <QSqlQuery>
 
