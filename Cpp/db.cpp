@@ -1,6 +1,7 @@
-#include "Headers\db.h"
+#include "Headers/db.h"
 #include <QDebug>
 #include <QSqlQuery>
+#include "Headers/databaseerror.h"
 
 DB *DB::instance = nullptr;
 
@@ -11,6 +12,9 @@ void DB::dbConnect(QString hostName, QString databaseName){
               .arg(hostName, databaseName));
     if (!db.open())
         qDebug() << "can't connect to db";
+        DatabaseError *w = new DatabaseError;
+        w->setAttribute(Qt::WA_DeleteOnClose);
+        w->show();
 }
 
 
@@ -18,7 +22,7 @@ DB *DB::getInstance()
 {
     if (instance == nullptr){
         instance = new DB();
-        instance->dbConnect("DESKTOP-BLMSA4C", "CashMachine");
+        instance->dbConnect("localhost", "CashMachine");
     }
     return instance;
 }
@@ -29,12 +33,18 @@ QList<Cash> DB::getBillsFromDB()
     QSqlQuery qry;
     QList<Cash> cash;
     Cash bill;
-    qry.prepare("SELECT value, count from Bill");
-    qry.exec();
-    while (qry.next()) {
-        bill.setCount(qry.value(1).toInt());
-        bill.setDenomination(qry.value(0).toInt());
-        cash.append(bill);
+    if (qry.prepare("SELECT value, count from Bill")){
+        qry.exec();
+        while (qry.next()) {
+            bill.setCount(qry.value(1).toInt());
+            bill.setDenomination(qry.value(0).toInt());
+            cash.append(bill);
+        }
+    }
+    else {
+        DatabaseError *w = new DatabaseError;
+        w->setAttribute(Qt::WA_DeleteOnClose);
+        w->show();
     }
     return cash;
 }
@@ -43,18 +53,30 @@ QSqlQueryModel *DB::getBillsModelFromDB()
 {
     QSqlQuery qry;
     QSqlQueryModel *model = new QSqlQueryModel();
-    qry.prepare("SELECT value, count from Bill");
-    qry.exec();
-    model->setQuery(std::move(qry));
+    if (qry.prepare("SELECT value, count from Bill")){
+        qry.exec();
+        model->setQuery(std::move(qry));
+    }
+    else {
+        DatabaseError *w = new DatabaseError;
+        w->setAttribute(Qt::WA_DeleteOnClose);
+        w->show();
+    }
     return model;
 }
 
 void DB::deleteBillsFromDB(const int &billValue)
 {
     QSqlQuery qry;
-    qry.prepare("DELETE FROM Bill WHERE value = :value");
-    qry.bindValue(":value", billValue);
-    qry.exec();
+    if (qry.prepare("DELETE FROM Bill WHERE value = :value")){
+        qry.bindValue(":value", billValue);
+        qry.exec();
+    }
+    else {
+        DatabaseError *w = new DatabaseError;
+        w->setAttribute(Qt::WA_DeleteOnClose);
+        w->show();
+    }
 
 }
 
@@ -72,16 +94,28 @@ void DB::insertBillsIntoDB(Cash &newCash)
         }
     }
     if (flag){
-        qry.prepare("UPDATE Bill SET count = count + :count WHERE value = :value");
-        qry.bindValue(":value", value);
-        qry.bindValue(":count", count);
-        qry.exec();
+        if (qry.prepare("UPDATE Bill SET count = count + :count WHERE value = :value")){
+            qry.bindValue(":value", value);
+            qry.bindValue(":count", count);
+            qry.exec();
+        }
+        else {
+            DatabaseError *w = new DatabaseError;
+            w->setAttribute(Qt::WA_DeleteOnClose);
+            w->show();
+        }
     }
     else {
-        qry.prepare("INSERT INTO Bill (value, count) VALUES (:value, :count)");
-        qry.bindValue(":value", value);
-        qry.bindValue(":count", count);
-        qry.exec();
+        if (qry.prepare("INSERT INTO Bill (value, count) VALUES (:value, :count)")){
+            qry.bindValue(":value", value);
+            qry.bindValue(":count", count);
+            qry.exec();
+        }
+        else{
+            DatabaseError *w = new DatabaseError;
+            w->setAttribute(Qt::WA_DeleteOnClose);
+            w->show();
+        }
     }
 
 }
@@ -93,9 +127,15 @@ void DB::withdrawBillsFromDB(QList<int>& withdrawCash)
     int value;
     for (int i = 0; i < withdrawCash.length(); ++i) {
         value = withdrawCash[i];
-        qry.prepare("UPDATE Bill SET count = count - 1 WHERE value = :value");
-        qry.bindValue(":value", value);
-        qry.exec();
+        if (qry.prepare("UPDATE Bill SET count = count - 1 WHERE value = :value")){
+            qry.bindValue(":value", value);
+            qry.exec();
+        }
+        else {
+            DatabaseError *w = new DatabaseError;
+            w->setAttribute(Qt::WA_DeleteOnClose);
+            w->show();
+        }
     }
 }
 
@@ -113,15 +153,27 @@ void DB::updateBillsInDB(Cash &newCash)
         }
     }
     if (flag){
-        qry.prepare("UPDATE Bill SET count = :count WHERE value = :value");
-        qry.bindValue(":value", value);
-        qry.bindValue(":count", count);
-        qry.exec();
+        if (qry.prepare("UPDATE Bill SET count = :count WHERE value = :value")){
+            qry.bindValue(":value", value);
+            qry.bindValue(":count", count);
+            qry.exec();
+        }
+        else{
+            DatabaseError *w = new DatabaseError;
+            w->setAttribute(Qt::WA_DeleteOnClose);
+            w->show();
+        }
     }
     else {
-        qry.prepare("INSERT INTO Bill (value, count) VALUES (:value, :count)");
-        qry.bindValue(":value", value);
-        qry.bindValue(":count", count);
-        qry.exec();
+        if (qry.prepare("INSERT INTO Bill (value, count) VALUES (:value, :count)")){
+            qry.bindValue(":value", value);
+            qry.bindValue(":count", count);
+            qry.exec();
+        }
+        else {
+            DatabaseError *w = new DatabaseError;
+            w->setAttribute(Qt::WA_DeleteOnClose);
+            w->show();
+        }
     }
 }
