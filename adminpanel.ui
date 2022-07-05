@@ -31,7 +31,6 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/images/sources/wallpapersden.com_ice-vs-fire-dragon-fight_1920x1080.jpg);</string>
     </property>
     <property name="text">
      <string/>
