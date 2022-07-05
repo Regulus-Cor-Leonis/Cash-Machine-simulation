@@ -25,7 +25,8 @@ SOURCES += \
     Cpp\successfuldelete.cpp \
     Cpp\successfulupdate.cpp \
     Cpp\successfulwithdraw.cpp \
-    Cpp\withdrawfunds.cpp
+    Cpp\withdrawfunds.cpp \
+    Cpp\databaseerror.cpp
 
 HEADERS += \
     Headers\adminpanel.h \
@@ -43,9 +44,11 @@ HEADERS += \
     Headers\successfuldelete.h \
     Headers\successfulupdate.h \
     Headers\successfulwithdraw.h \
-    Headers\withdrawfunds.h
+    Headers\withdrawfunds.h \
+    Headers\databaseerror.h
 
 FORMS += \
+    Ui\databaseerror.ui \
     Ui\adminpanel.ui \
     Ui\errorpassword.ui \
     Ui\exceedingwithdrawalamount.ui \

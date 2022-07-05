@@ -14,7 +14,7 @@
    <string>Dragon cash machine</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="sources.qrc">
+   <iconset resource="../sources.qrc">
     <normaloff>:/images/sources/Logo.png</normaloff>:/images/sources/Logo.png</iconset>
   </property>
   <property name="iconSize">
@@ -83,7 +83,7 @@ QPushButton:pressed {
       <string>Exit</string>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/ExitIcon.png</normaloff>:/images/sources/ExitIcon.png</iconset>
      </property>
      <property name="iconSize">
@@ -159,12 +159,13 @@ QPushButton:pressed {
      <bool>false</bool>
     </property>
     <property name="styleSheet">
+     <string/>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="sources.qrc">:/images/sources/Dragons.jpg</pixmap>
+     <pixmap resource="../sources.qrc">:/images/sources/Dragons.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -232,7 +233,7 @@ QPushButton:pressed {
       <string>Withdraw funds</string>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/CashIcon.png</normaloff>:/images/sources/CashIcon.png</iconset>
      </property>
      <property name="iconSize">
@@ -322,7 +323,7 @@ QPushButton:pressed {
      <rect>
       <x>1080</x>
       <y>0</y>
-      <width>65</width>
+      <width>63</width>
       <height>41</height>
      </rect>
     </property>
@@ -360,7 +361,7 @@ QPushButton:pressed {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="sources.qrc">:/images/sources/Clock.png</pixmap>
+     <pixmap resource="../sources.qrc">:/images/sources/Clock.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -425,7 +426,7 @@ QPushButton:pressed {
       <string> Admin panel</string>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/AdminPanelIcon.png</normaloff>:/images/sources/AdminPanelIcon.png</iconset>
      </property>
      <property name="iconSize">
@@ -515,7 +516,7 @@ QPushButton:pressed {
   </widget>
  </widget>
  <resources>
-  <include location="sources.qrc"/>
+  <include location="../sources.qrc"/>
  </resources>
  <connections/>
 </ui>

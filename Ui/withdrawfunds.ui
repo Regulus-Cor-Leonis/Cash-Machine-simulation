@@ -14,7 +14,7 @@
    <string>Dragon cash machine</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="sources.qrc">
+   <iconset resource="../sources.qrc">
     <normaloff>:/images/sources/Logo.png</normaloff>:/images/sources/Logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -31,12 +31,13 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
+     <string/>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="sources.qrc">:/images/sources/Dragons.jpg</pixmap>
+     <pixmap resource="../sources.qrc">:/images/sources/Dragons.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -47,7 +48,7 @@
      <rect>
       <x>1080</x>
       <y>0</y>
-      <width>65</width>
+      <width>63</width>
       <height>41</height>
      </rect>
     </property>
@@ -107,7 +108,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="sources.qrc">:/images/sources/Clock.png</pixmap>
+     <pixmap resource="../sources.qrc">:/images/sources/Clock.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -199,7 +200,7 @@ QPushButton:pressed {
       <string> 50</string>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/Hryvnia.png</normaloff>:/images/sources/Hryvnia.png</iconset>
      </property>
      <property name="iconSize">
@@ -321,7 +322,7 @@ QPushButton:pressed {
       <string> 100</string>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/Hryvnia.png</normaloff>:/images/sources/Hryvnia.png</iconset>
      </property>
      <property name="iconSize">
@@ -443,7 +444,7 @@ QPushButton:pressed {
       <string> 200</string>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/Hryvnia.png</normaloff>:/images/sources/Hryvnia.png</iconset>
      </property>
      <property name="iconSize">
@@ -565,7 +566,7 @@ QPushButton:pressed {
       <string> 500</string>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/Hryvnia.png</normaloff>:/images/sources/Hryvnia.png</iconset>
      </property>
      <property name="iconSize">
@@ -687,7 +688,7 @@ QPushButton:pressed {
       <string> 1000</string>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/Hryvnia.png</normaloff>:/images/sources/Hryvnia.png</iconset>
      </property>
      <property name="iconSize">
@@ -875,7 +876,7 @@ QPushButton:pressed {
       <string>Withdraw money</string>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/Money.png</normaloff>:/images/sources/Money.png</iconset>
      </property>
      <property name="iconSize">
@@ -997,7 +998,7 @@ QPushButton:pressed {
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/BackA.png</normaloff>:/images/sources/BackA.png</iconset>
      </property>
      <property name="iconSize">
@@ -1214,7 +1215,7 @@ QPushButton:pressed {
   </widget>
  </widget>
  <resources>
-  <include location="sources.qrc"/>
+  <include location="../sources.qrc"/>
  </resources>
  <connections/>
 </ui>
