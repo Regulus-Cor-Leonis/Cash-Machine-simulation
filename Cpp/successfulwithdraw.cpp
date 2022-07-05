@@ -1,5 +1,5 @@
-#include "successfulwithdraw.h"
-#include "cash.h"
+#include "Headers\successfulwithdraw.h"
+#include "Headers\cash.h"
 #include "ui_successfulwithdraw.h"
 #include<iostream>
 

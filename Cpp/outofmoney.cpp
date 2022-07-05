@@ -1,4 +1,4 @@
-#include "outofmoney.h"
+#include "Headers\outofmoney.h"
 #include "ui_outofmoney.h"
 
 OutOfMoney::OutOfMoney(QWidget *parent) :

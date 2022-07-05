@@ -1,4 +1,4 @@
-#include "nobills.h"
+#include "Headers\nobills.h"
 #include "ui_nobills.h"
 
 NoBills::NoBills(QWidget *parent) :

@@ -1,11 +1,11 @@
-#include "adminpanel.h"
+#include "Headers\adminpanel.h"
 #include "ui_adminpanel.h"
-#include "mainwindow.h"
+#include "Headers\mainwindow.h"
 #include <QFileDialog>
-#include "successfuladd.h"
-#include "successfuldelete.h"
-#include "successfulupdate.h"
-#include "readerror.h"
+#include "Headers\successfuladd.h"
+#include "Headers\successfuldelete.h"
+#include "Headers\successfulupdate.h"
+#include "Headers\readerror.h"
 
 AdminPanel::AdminPanel(QWidget *parent) :
     QMainWindow(parent),

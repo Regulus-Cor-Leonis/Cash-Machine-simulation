@@ -1,7 +1,7 @@
-#include "exitmessage.h"
+#include "Headers\exitmessage.h"
 #include "ui_exitmessage.h"
 
-#include "mainwindow.h"
+#include "Headers\mainwindow.h"
 #include "ui_mainwindow.h"
 
 ExitMessage::ExitMessage(QWidget *parent) :

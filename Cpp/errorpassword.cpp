@@ -1,4 +1,4 @@
-#include "errorpassword.h"
+#include "Headers\errorpassword.h"
 #include "ui_errorpassword.h"
 
 ErrorPassword::ErrorPassword(QWidget *parent) :
