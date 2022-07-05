@@ -19,7 +19,7 @@ WithdrawFunds::WithdrawFunds(QWidget *parent) :
     count = 0;
 
     ui->lineEdit->setPlaceholderText("Enter amount to withdraw");
-    ui->lineEdit->setMaxLength(18);
+    ui->lineEdit->setMaxLength(9);
 
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(showTime()));
@@ -320,6 +320,7 @@ void WithdrawFunds::issuance(QList<Cash>* ptrATM, int request){
     }
 
     int sum=getSum(money);
+    qDebug()<<"Suma="<<sum;
     QList<int> funds;
     if (sum<request){
         qDebug()<<"Not enough funds at the ATM ";
