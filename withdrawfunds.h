@@ -26,17 +26,16 @@ class WithdrawFunds : public QMainWindow
 public:
     explicit WithdrawFunds(QWidget *parent = nullptr);
     ~WithdrawFunds();
-    void setATM(QList<Cash> atm){this->ATM=atm;}
+    void setATM(QList<Cash> &atm){this->ATM=atm;}
     QList<Cash> getATM(){return this->ATM;}
-    bool minCountOfBills(int, QList<int> , QList<int> , int , int );
-    void issuance(QList<Cash> , int );
-    void callMajorFunction(int);
-    /*void setresFunds(QList<int>* funds){this->resFunds=funds;}
-    QList<int>* getresFunds(){return this->resFunds;}*/
 
 private:
     Ui::WithdrawFunds *ui;
-
+    bool minCountOfBills(int , QList<int> &, QList<int> , int& , int );
+    void issuance(QList<Cash> &, int &);
+    void callMajorFunction(int);
+    int getSum(QList<int> &);
+    void sortDescending();
     int count;
 
 private slots:

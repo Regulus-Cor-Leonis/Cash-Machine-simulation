@@ -26,8 +26,6 @@ AdminPanel::AdminPanel(QWidget *parent) :
 
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    //DB* db = DB::getInstance();
-
     this->setFixedSize(1280, 780);
 
 }
@@ -126,7 +124,7 @@ void AdminPanel::on_tableView_clicked(const QModelIndex &index)
     }
 }
 
-
+//pushbutton exit
 void AdminPanel::on_pushButton_10_clicked()
 {
     MainWindow *w=new MainWindow;
@@ -136,6 +134,7 @@ void AdminPanel::on_pushButton_10_clicked()
     this->close();
 }
 
+//pushbutton Database
 void AdminPanel::on_pushButton_7_clicked()
 {//база даних
     DB* db = DB::getInstance();
@@ -144,6 +143,10 @@ void AdminPanel::on_pushButton_7_clicked()
     ui->pushButton_5->setEnabled(true);
     ATM=db->getBillsFromDB();
     ui->tableView->setModel(db->getBillsModelFromDB());
+    ui->tableView->horizontalHeader()->show();
+    for (int i = 0; i < ui->tableView->model()->rowCount(); ++i){
+        ui->tableView->showRow(i);
+    }
 }
 
 QList<Cash> readJson(QString fileName){
@@ -183,16 +186,19 @@ QList<Cash> readJson(QString fileName){
     return QList<Cash>();
 }
 
+//pushbutton Configuration file
 void AdminPanel::on_pushButton_9_clicked()
 {//файл
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),"data",tr("Images (*.json)"));
+    ui->lineEdit->setText("");
+    ui->lineEdit_2->setText("");
+    for (int i = 0; i < ui->tableView->model()->rowCount(); ++i){
+        ui->tableView->hideRow(i);
+    }
+    ui->tableView->horizontalHeader()->hide();
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),"data",tr("Configuration (*.json)"));
     qDebug()<<fileName;
     ui->pushButton_3->setEnabled(false);
     ui->pushButton_4->setEnabled(false);
     ui->pushButton_5->setEnabled(false);
     ATM=readJson(fileName);
-    QList<Cash>::iterator i;
-    for (i = ATM.begin(); i != ATM.end(); ++i){
-        //qDebug()<<i->getCount()<<" "<<i->getDenomination();
-    }
 }

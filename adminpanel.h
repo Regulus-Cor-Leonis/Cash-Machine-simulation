@@ -22,7 +22,7 @@ class AdminPanel : public QMainWindow
 public:
     explicit AdminPanel(QWidget *parent = nullptr);
     ~AdminPanel();
-    void setATM(QList<Cash> atm){this->ATM=atm;}
+    void setATM(QList<Cash> &atm){this->ATM=atm;}
     QList<Cash> getATM(){return this->ATM;}
 
 private:

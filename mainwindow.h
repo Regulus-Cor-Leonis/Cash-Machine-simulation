@@ -18,7 +18,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void setATM(QList<Cash> atm){this->ATM=atm;}
+    void setATM(QList<Cash> &atm){this->ATM=atm;}
     QList<Cash> getATM(){return this->ATM;}
 
 private slots:

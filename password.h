@@ -16,7 +16,7 @@ class Password : public QMainWindow
 public:
     explicit Password(QWidget *parent = nullptr);
     ~Password();
-    void setATM(QList<Cash> atm){this->ATM=atm;}
+    void setATM(QList<Cash> &atm){this->ATM=atm;}
     QList<Cash> getATM(){return this->ATM;}
 
 private slots:

@@ -221,13 +221,13 @@ void WithdrawFunds::animationButton()
         }
 }
 
-QList<Cash> sortDescending(QList<Cash> atm){
+void WithdrawFunds::sortDescending(){
     QList<Cash>::Iterator i;
-    for (i = atm.begin(); i != atm.end(); ++i){
+    for (i = ATM.begin(); i != ATM.end(); ++i){
         QList<Cash>::Iterator j;
         QList<Cash>::Iterator maxj=i;
         int max=i->getDenomination();
-        for(j=i; j!=atm.end();++j){
+        for(j=i; j!=ATM.end();++j){
             if (max<j->getDenomination()){
                 maxj=j;
                 max=j->getDenomination();
@@ -240,33 +240,9 @@ QList<Cash> sortDescending(QList<Cash> atm){
         i->setCount(maxj->getCount());
         maxj->setCount(temp);
     }
-    return atm;
 }
 
-QList<Cash> sortAscending(QList<Cash> atm){
-    QList<Cash>::Iterator i;
-    for (i = atm.begin(); i != atm.end(); ++i){
-        QList<Cash>::Iterator j;
-        QList<Cash>::Iterator minj=i;
-        int min=i->getDenomination();
-        for(j=i; j!=atm.end();++j){
-            if (min>j->getDenomination()){
-                minj=j;
-                min=j->getDenomination();
-            }
-        }
-        int temp=i->getDenomination();
-        i->setDenomination(minj->getDenomination());
-        minj->setDenomination(temp);
-        temp=i->getCount();
-        i->setCount(minj->getCount());
-        minj->setCount(temp);
-    }
-    return atm;
-}
-
-
-int getSum(QList<int> atm){
+int WithdrawFunds::getSum(QList<int> &atm){
     QList<int>::iterator i;
     int sum=0;
     for (i = atm.begin(); i != atm.end(); ++i){
@@ -275,7 +251,7 @@ int getSum(QList<int> atm){
     return sum;
 }
 
-bool WithdrawFunds::minCountOfBills(int i, QList<int> money, QList<int> funds, int request, int sum){
+bool WithdrawFunds::minCountOfBills(int i, QList<int> &money, QList<int> funds, int &request, int sum){
     int j=i;
     sum+=money[j];
     funds.append(money[j]);
@@ -305,7 +281,7 @@ bool WithdrawFunds::minCountOfBills(int i, QList<int> money, QList<int> funds, i
 }
 
 
-void WithdrawFunds::issuance(QList<Cash> atm, int request){
+void WithdrawFunds::issuance(QList<Cash> &atm, int &request){
 
     qDebug()<<"request="<<request;
 
@@ -360,7 +336,7 @@ void WithdrawFunds::callMajorFunction(int request){
         DB* db = DB::getInstance();
         ATM=db->getBillsFromDB();
     }
-    ATM=sortDescending(ATM);
+    sortDescending();
     QList<Cash>::Iterator i;
     for(i=ATM.begin();i!=ATM.end();++i){
         cout<<i->getDenomination()<<" "<<i->getCount()<<endl;
