@@ -7,6 +7,7 @@
 #include "adminpanel.h"
 #include "exitmessage.h"
 #include "password.h"
+#include "successfulupdate.h"
 #include <QScreen>
 
 

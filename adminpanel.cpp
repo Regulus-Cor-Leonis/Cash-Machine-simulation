@@ -5,6 +5,7 @@
 #include "successfuladd.h"
 #include "successfuldelete.h"
 #include "successfulupdate.h"
+#include "readerror.h"
 
 AdminPanel::AdminPanel(QWidget *parent) :
     QMainWindow(parent),
@@ -48,13 +49,24 @@ void AdminPanel::on_pushButton_3_clicked()
     if (ui->lineEdit->text() != "" && ui->lineEdit_2->text() != ""){
         DB* db = DB::getInstance();
         Cash cash;
-        cash.setDenomination(ui->lineEdit->text().toInt());
-        cash.setCount(ui->lineEdit_2->text().toInt());
-        db->insertBillsIntoDB(cash);
-        ui->tableView->setModel(db->getBillsModelFromDB());
-        SuccessfulAdd *w = new SuccessfulAdd;
-        w->setAttribute(Qt::WA_DeleteOnClose);
-        w->show();
+        bool ok1,ok2;
+        int den=ui->lineEdit->text().toInt(&ok1,10);
+        int cnt=ui->lineEdit_2->text().toInt(&ok2,10);
+        if (ok1 && ok2){
+            cash.setDenomination(den);
+            cash.setCount(cnt);
+            db->insertBillsIntoDB(cash);
+            ui->tableView->setModel(db->getBillsModelFromDB());
+            SuccessfulAdd *w = new SuccessfulAdd;
+            w->setAttribute(Qt::WA_DeleteOnClose);
+            w->show();
+        } else{
+            ReadError *w=new ReadError;
+            w->setAttribute(Qt::WA_DeleteOnClose);
+            w->show();
+            ui->lineEdit->setText("");
+            ui->lineEdit_2->setText("");
+        }
     }
 }
 
@@ -62,15 +74,26 @@ void AdminPanel::on_pushButton_3_clicked()
 void AdminPanel::on_pushButton_4_clicked()
 {
     if (ui->lineEdit->text() != "" && ui->lineEdit_2->text() != ""){
+        bool ok1,ok2;
+        int den=ui->lineEdit->text().toInt(&ok1,10);
+        int cnt=ui->lineEdit_2->text().toInt(&ok2,10);
         DB* db = DB::getInstance();
         Cash cash;
-        cash.setDenomination(ui->lineEdit->text().toInt());
-        cash.setCount(ui->lineEdit_2->text().toInt());
-        db->updateBillsInDB(cash);
-        ui->tableView->setModel(db->getBillsModelFromDB());
-        SuccessfulUpdate *w = new SuccessfulUpdate;
-        w->setAttribute(Qt::WA_DeleteOnClose);
-        w->show();
+        if (ok1 && ok2){
+            cash.setDenomination(den);
+            cash.setCount(cnt);
+            db->updateBillsInDB(cash);
+            ui->tableView->setModel(db->getBillsModelFromDB());
+            SuccessfulUpdate *w = new SuccessfulUpdate;
+            w->setAttribute(Qt::WA_DeleteOnClose);
+            w->show();
+        } else {
+            ReadError *w=new ReadError;
+            w->setAttribute(Qt::WA_DeleteOnClose);
+            w->show();
+            ui->lineEdit->setText("");
+            ui->lineEdit_2->setText("");
+        }
     }
 }
 

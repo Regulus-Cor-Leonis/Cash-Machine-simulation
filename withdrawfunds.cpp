@@ -298,21 +298,21 @@ bool WithdrawFunds::minCountOfBills(int i, QList<int> money, QList<int> funds, i
         if (h>=money.length()) return false;
         while (money[h]==money[h+1]){
             h++;
-            if (h==money.length()-2) return false;
+            if (h>=money.length()-2) return false;
         }
         return minCountOfBills(h+2,money,funds,request,sum);
     }
 }
 
 
-void WithdrawFunds::issuance(QList<Cash>* ptrATM, int request){
+void WithdrawFunds::issuance(QList<Cash> atm, int request){
 
     qDebug()<<"request="<<request;
 
     QList<Cash>::Iterator i;
     QList<int> money;
     money.append(0);
-    for(i=ptrATM->begin();i!=ptrATM->end();++i){
+    for(i=atm.begin();i!=atm.end();++i){
         int j=0;
         for(j=0;j<i->getCount();j++){
             money.append(i->getDenomination());
@@ -354,20 +354,36 @@ void WithdrawFunds::issuance(QList<Cash>* ptrATM, int request){
     }
 }
 
-void WithdrawFunds::on_pushButton_7_clicked()
-{
-    bool ok;
+void WithdrawFunds::callMajorFunction(int request){
+    resFunds.clear();
     if (ATM.length()==0){
         DB* db = DB::getInstance();
         ATM=db->getBillsFromDB();
     }
     ATM=sortDescending(ATM);
-    QList<Cash>*ptrATM=&ATM;
     QList<Cash>::Iterator i;
     for(i=ATM.begin();i!=ATM.end();++i){
         cout<<i->getDenomination()<<" "<<i->getCount()<<endl;
     }
 
+    cout<<"Check"<<endl;
+    issuance(ATM,request);
+    QList<int>::Iterator j;
+    for (j=resFunds.begin();j!=resFunds.end();++j){
+        for(i=ATM.begin();i!=ATM.end();++i){
+            if (i->getDenomination()==*j){
+                i->setCount(i->getCount()-1);
+                break;
+            }
+        }
+        cout<<"resFunds: "<<*j<<endl;
+    }
+}
+
+
+void WithdrawFunds::on_pushButton_7_clicked()
+{
+    bool ok;
     int request=ui->lineEdit->text().toInt(&ok,10);
     if (ok==false){
         ReadError *w=new ReadError;
@@ -376,23 +392,11 @@ void WithdrawFunds::on_pushButton_7_clicked()
         ui->lineEdit->setText("");
     }
     else{
-        if (request>=10000000){
+        if (request>=10000){
             ExceedingWithdrawalAmount* w=new ExceedingWithdrawalAmount;
             w->show();
         } else{
-            cout<<"Check"<<endl;
-            issuance(ptrATM,request);
-            QList<Cash>::Iterator i;
-            QList<int>::Iterator j;
-            for (j=resFunds.begin();j!=resFunds.end();++j){
-                for(i=ptrATM->begin();i!=ptrATM->end();++i){
-                    if (i->getDenomination()==*j){
-                        i->setCount(i->getCount()-1);
-                        break;
-                    }
-                }
-                cout<<"resFunds: "<<*j<<endl;
-            }
+            callMajorFunction(request);
         }
     }
 }
@@ -400,119 +404,34 @@ void WithdrawFunds::on_pushButton_7_clicked()
 void WithdrawFunds::on_pushButton_2_clicked()
 {
     int request=50;
-    if (ATM.length()==0){
-        DB* db = DB::getInstance();
-        ATM=db->getBillsFromDB();
-    }
-    ATM=sortDescending(ATM);
-    QList<Cash>*ptrATM=&ATM;
-    issuance(ptrATM,request);
-    QList<Cash>::Iterator i;
-    QList<int>::Iterator j;
-    for (j=resFunds.begin();j!=resFunds.end();++j){
-        for(i=ptrATM->begin();i!=ptrATM->end();++i){
-            if (i->getDenomination()==*j){
-                i->setCount(i->getCount()-1);
-                break;
-            }
-        }
-        cout<<"resFunds: "<<*j<<endl;
-    }
+    callMajorFunction(request);
 }
 
 void WithdrawFunds::on_pushButton_3_clicked()
 {
     int request=100;
-    if (ATM.length()==0){
-        DB* db = DB::getInstance();
-        ATM=db->getBillsFromDB();
-    }
-    ATM=sortDescending(ATM);
-    QList<Cash>*ptrATM=&ATM;
-    issuance(ptrATM,request);
-    QList<Cash>::Iterator i;
-    QList<int>::Iterator j;
-    for (j=resFunds.begin();j!=resFunds.end();++j){
-        for(i=ptrATM->begin();i!=ptrATM->end();++i){
-            if (i->getDenomination()==*j){
-                i->setCount(i->getCount()-1);
-                break;
-            }
-        }
-        cout<<"resFunds: "<<*j<<endl;
-    }
+    callMajorFunction(request);
 }
 
 
 void WithdrawFunds::on_pushButton_4_clicked()
 {
     int request=200;
-    if (ATM.length()==0){
-        DB* db = DB::getInstance();
-        ATM=db->getBillsFromDB();
-    }
-    ATM=sortDescending(ATM);
-    QList<Cash>*ptrATM=&ATM;
-    issuance(ptrATM,request);
-    QList<Cash>::Iterator i;
-    QList<int>::Iterator j;
-    for (j=resFunds.begin();j!=resFunds.end();++j){
-        for(i=ptrATM->begin();i!=ptrATM->end();++i){
-            if (i->getDenomination()==*j){
-                i->setCount(i->getCount()-1);
-                break;
-            }
-        }
-        cout<<"resFunds: "<<*j<<endl;
-    }
+    callMajorFunction(request);
 }
 
 
 void WithdrawFunds::on_pushButton_5_clicked()
 {
     int request=500;
-    if (ATM.length()==0){
-        DB* db = DB::getInstance();
-        ATM=db->getBillsFromDB();
-    }
-    ATM=sortDescending(ATM);
-    QList<Cash>*ptrATM=&ATM;
-    issuance(ptrATM,request);
-    QList<Cash>::Iterator i;
-    QList<int>::Iterator j;
-    for (j=resFunds.begin();j!=resFunds.end();++j){
-        for(i=ptrATM->begin();i!=ptrATM->end();++i){
-            if (i->getDenomination()==*j){
-                i->setCount(i->getCount()-1);
-                break;
-            }
-        }
-        cout<<"resFunds: "<<*j<<endl;
-    }
+    callMajorFunction(request);
 }
 
 
 void WithdrawFunds::on_pushButton_6_clicked()
 {
     int request=1000;
-    if (ATM.length()==0){
-        DB* db = DB::getInstance();
-        ATM=db->getBillsFromDB();
-    }
-    ATM=sortDescending(ATM);
-    QList<Cash>*ptrATM=&ATM;
-    issuance(ptrATM,request);
-    QList<Cash>::Iterator i;
-    QList<int>::Iterator j;
-    for (j=resFunds.begin();j!=resFunds.end();++j){
-        for(i=ptrATM->begin();i!=ptrATM->end();++i){
-            if (i->getDenomination()==*j){
-                i->setCount(i->getCount()-1);
-                break;
-            }
-        }
-        cout<<"resFunds: "<<*j<<endl;
-    }
+    callMajorFunction(request);
 }
 
 
