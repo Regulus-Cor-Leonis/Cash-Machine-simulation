@@ -353,6 +353,8 @@ void WithdrawFunds::callMajorFunction(int request){
             }
         }
         cout<<"resFunds: "<<*j<<endl;
+        DB* db = DB::getInstance();
+        db->withdrawBillsFromDB(resFunds);
     }
 }
 

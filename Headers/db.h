@@ -23,7 +23,7 @@ public:
     QSqlQueryModel *getBillsModelFromDB();
     void deleteBillsFromDB(const int &billValue);
     void insertBillsIntoDB(Cash &newCash);
-    void withdrawBillsFromDB(QList<Cash> &withdrawCash);
+    void withdrawBillsFromDB(QList<int> &withdrawCash);
     void updateBillsInDB(Cash &newCash);
 
 };
