@@ -86,16 +86,15 @@ void DB::insertBillsIntoDB(Cash &newCash)
 
 }
 
-void DB::withdrawBillsFromDB(QList<Cash> &withdrawCash)
+//delete cash from db after withdrawal
+void DB::withdrawBillsFromDB(QList<int>& withdrawCash)
 {
     QSqlQuery qry;
-    int value, count;
-    for (int i = 0; i < withdrawCash.length(); ++i){
-        value = withdrawCash[i].getDenomination();
-        count = withdrawCash[i].getCount();
-        qry.prepare("UPDATE Bill SET count = count - :count WHERE value = :value");
+    int value;
+    for (int i = 0; i < withdrawCash.length(); ++i) {
+        value = withdrawCash[i];
+        qry.prepare("UPDATE Bill SET count = count - 1 WHERE value = :value");
         qry.bindValue(":value", value);
-        qry.bindValue(":count", count);
         qry.exec();
     }
 }
