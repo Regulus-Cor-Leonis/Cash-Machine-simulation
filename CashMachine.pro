@@ -10,56 +10,56 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    adminpanel.cpp \
-    db.cpp \
-    errorpassword.cpp \
-    exceedingwithdrawalamount.cpp \
-    exitmessage.cpp \
-    main.cpp \
-    mainwindow.cpp \
-    nobills.cpp \
-    outofmoney.cpp \
-    password.cpp \
-    readerror.cpp \
-    successfuladd.cpp \
-    successfuldelete.cpp \
-    successfulupdate.cpp \
-    successfulwithdraw.cpp \
-    withdrawfunds.cpp
+    Cpp\adminpanel.cpp \
+    Cpp\db.cpp \
+    Cpp\errorpassword.cpp \
+    Cpp\exceedingwithdrawalamount.cpp \
+    Cpp\exitmessage.cpp \
+    Cpp\main.cpp \
+    Cpp\mainwindow.cpp \
+    Cpp\nobills.cpp \
+    Cpp\outofmoney.cpp \
+    Cpp\password.cpp \
+    Cpp\readerror.cpp \
+    Cpp\successfuladd.cpp \
+    Cpp\successfuldelete.cpp \
+    Cpp\successfulupdate.cpp \
+    Cpp\successfulwithdraw.cpp \
+    Cpp\withdrawfunds.cpp
 
 HEADERS += \
-    adminpanel.h \
-    cash.h \
-    db.h \
-    errorpassword.h \
-    exceedingwithdrawalamount.h \
-    exitmessage.h \
-    mainwindow.h \
-    nobills.h \
-    outofmoney.h \
-    password.h \
-    readerror.h \
-    successfuladd.h \
-    successfuldelete.h \
-    successfulupdate.h \
-    successfulwithdraw.h \
-    withdrawfunds.h
+    Headers\adminpanel.h \
+    Headers\cash.h \
+    Headers\db.h \
+    Headers\errorpassword.h \
+    Headers\exceedingwithdrawalamount.h \
+    Headers\exitmessage.h \
+    Headers\mainwindow.h \
+    Headers\nobills.h \
+    Headers\outofmoney.h \
+    Headers\password.h \
+    Headers\readerror.h \
+    Headers\successfuladd.h \
+    Headers\successfuldelete.h \
+    Headers\successfulupdate.h \
+    Headers\successfulwithdraw.h \
+    Headers\withdrawfunds.h
 
 FORMS += \
-    adminpanel.ui \
-    errorpassword.ui \
-    exceedingwithdrawalamount.ui \
-    exitmessage.ui \
-    mainwindow.ui \
-    nobills.ui \
-    outofmoney.ui \
-    password.ui \
-    readerror.ui \
-    successfuladd.ui \
-    successfuldelete.ui \
-    successfulupdate.ui \
-    successfulwithdraw.ui \
-    withdrawfunds.ui
+    Ui\adminpanel.ui \
+    Ui\errorpassword.ui \
+    Ui\exceedingwithdrawalamount.ui \
+    Ui\exitmessage.ui \
+    Ui\mainwindow.ui \
+    Ui\nobills.ui \
+    Ui\outofmoney.ui \
+    Ui\password.ui \
+    Ui\readerror.ui \
+    Ui\successfuladd.ui \
+    Ui\successfuldelete.ui \
+    Ui\successfulupdate.ui \
+    Ui\successfulwithdraw.ui \
+    Ui\withdrawfunds.ui
 
 
 # Default rules for deployment.
