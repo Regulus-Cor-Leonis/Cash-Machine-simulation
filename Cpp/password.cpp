@@ -18,7 +18,7 @@ Password::~Password()
 {
     delete ui;
 }
-
+//pushbutton Apply
 void Password::on_pushButton_6_clicked()
 {
     if (ui->lineEdit->text() == "EleksLove"){
@@ -35,7 +35,7 @@ void Password::on_pushButton_6_clicked()
     }
 }
 
-
+//pushbutton Exit
 void Password::on_pushButton_7_clicked()
 {
     MainWindow *w = new MainWindow;

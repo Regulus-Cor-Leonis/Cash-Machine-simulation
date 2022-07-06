@@ -14,6 +14,7 @@ DatabaseError::~DatabaseError()
     delete ui;
 }
 
+//pushbutton Ok
 void DatabaseError::on_pushButton_2_clicked()
 {
     this->close();

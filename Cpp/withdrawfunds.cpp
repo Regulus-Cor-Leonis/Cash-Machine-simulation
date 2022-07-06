@@ -359,6 +359,7 @@ void WithdrawFunds::callMajorFunction(int request){
 }
 
 
+//pushbutton Withdraw money
 void WithdrawFunds::on_pushButton_7_clicked()
 {
     bool ok;
@@ -379,40 +380,42 @@ void WithdrawFunds::on_pushButton_7_clicked()
     }
 }
 
+//pushbutton 50
 void WithdrawFunds::on_pushButton_2_clicked()
 {
     int request=50;
     callMajorFunction(request);
 }
 
+//pushbutton 100
 void WithdrawFunds::on_pushButton_3_clicked()
 {
     int request=100;
     callMajorFunction(request);
 }
 
-
+//pushbutton 200
 void WithdrawFunds::on_pushButton_4_clicked()
 {
     int request=200;
     callMajorFunction(request);
 }
 
-
+//pushbutton 500
 void WithdrawFunds::on_pushButton_5_clicked()
 {
     int request=500;
     callMajorFunction(request);
 }
 
-
+//pushbutton 1000
 void WithdrawFunds::on_pushButton_6_clicked()
 {
     int request=1000;
     callMajorFunction(request);
 }
 
-
+//pushbutton Exit
 void WithdrawFunds::on_pushButton_8_clicked()
 {
     MainWindow *w=new MainWindow;

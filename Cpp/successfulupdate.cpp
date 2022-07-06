@@ -15,6 +15,7 @@ SuccessfulUpdate::~SuccessfulUpdate()
     delete ui;
 }
 
+//pushbutton Ok
 void SuccessfulUpdate::on_pushButton_2_clicked()
 {
     this->close();

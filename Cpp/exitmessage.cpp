@@ -17,11 +17,13 @@ ExitMessage::~ExitMessage()
     delete ui;
 }
 
+//pushbutton Yes
 void ExitMessage::on_pushButton_3_clicked()
 {
     exit(0);
 }
 
+//pushbutton No
 void ExitMessage::on_pushButton_2_clicked()
 {
     this->close();

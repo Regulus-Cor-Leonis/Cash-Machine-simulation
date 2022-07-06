@@ -14,6 +14,7 @@ ExceedingWithdrawalAmount::~ExceedingWithdrawalAmount()
     delete ui;
 }
 
+//pushbutton Ok
 void ExceedingWithdrawalAmount::on_pushButton_2_clicked()
 {
     this->close();

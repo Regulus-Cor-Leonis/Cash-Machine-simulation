@@ -46,7 +46,7 @@ SuccessfulWithdraw::~SuccessfulWithdraw()
 {
     delete ui;
 }
-
+//pushbutton Ok
 void SuccessfulWithdraw::on_pushButton_2_clicked()
 {
     this->close();

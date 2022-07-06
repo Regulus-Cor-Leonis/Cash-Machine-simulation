@@ -42,6 +42,8 @@ void AdminPanel::showTime()
     ui->label_3->setText(timeText);
 }
 
+
+//pushbutton Add
 void AdminPanel::on_pushButton_3_clicked()
 {
     if (ui->lineEdit->text() != "" && ui->lineEdit_2->text() != ""){
@@ -68,7 +70,7 @@ void AdminPanel::on_pushButton_3_clicked()
     }
 }
 
-
+//pushbutton Edit
 void AdminPanel::on_pushButton_4_clicked()
 {
     if (ui->lineEdit->text() != "" && ui->lineEdit_2->text() != ""){
@@ -95,7 +97,7 @@ void AdminPanel::on_pushButton_4_clicked()
     }
 }
 
-
+//pushbutton Delete
 void AdminPanel::on_pushButton_5_clicked()
 {
     QItemSelectionModel *select = ui->tableView->selectionModel();

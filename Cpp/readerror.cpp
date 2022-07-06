@@ -14,6 +14,7 @@ ReadError::~ReadError()
     delete ui;
 }
 
+//pushbutton Ok
 void ReadError::on_pushButton_2_clicked()
 {
     this->close();

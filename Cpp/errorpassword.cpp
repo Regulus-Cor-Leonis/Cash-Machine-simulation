@@ -14,6 +14,7 @@ ErrorPassword::~ErrorPassword()
     delete ui;
 }
 
+//pushbutton Ok
 void ErrorPassword::on_pushButton_2_clicked()
 {
     this->close();

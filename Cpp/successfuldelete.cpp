@@ -15,6 +15,7 @@ SuccessfulDelete::~SuccessfulDelete()
     delete ui;
 }
 
+//pushbutton Ok
 void SuccessfulDelete::on_pushButton_2_clicked()
 {
     this->close();

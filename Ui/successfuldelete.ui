@@ -14,7 +14,7 @@
    <string>Information</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="sources.qrc">
+   <iconset resource="../sources.qrc">
     <normaloff>:/images/sources/Information.png</normaloff>:/images/sources/Information.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -123,7 +123,7 @@ QPushButton:pressed {
       <string>Ok</string>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/Okay.png</normaloff>:/images/sources/Okay.png</iconset>
      </property>
      <property name="iconSize">
@@ -209,7 +209,7 @@ QPushButton:pressed {
   </widget>
  </widget>
  <resources>
-  <include location="sources.qrc"/>
+  <include location="../sources.qrc"/>
  </resources>
  <connections/>
 </ui>

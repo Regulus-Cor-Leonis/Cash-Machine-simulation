@@ -14,7 +14,7 @@
    <string>Dragon cash machine</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="sources.qrc">
+   <iconset resource="../sources.qrc">
     <normaloff>:/images/sources/Logo.png</normaloff>:/images/sources/Logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -123,7 +123,7 @@ QPushButton:pressed {
       <string>No</string>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/No.png</normaloff>:/images/sources/No.png</iconset>
      </property>
      <property name="iconSize">
@@ -245,7 +245,7 @@ QPushButton:pressed {
       <string>Yes</string>
      </property>
      <property name="icon">
-      <iconset resource="sources.qrc">
+      <iconset resource="../sources.qrc">
        <normaloff>:/images/sources/Yes.png</normaloff>:/images/sources/Yes.png</iconset>
      </property>
      <property name="iconSize">
@@ -332,7 +332,7 @@ QPushButton:pressed {
   </widget>
  </widget>
  <resources>
-  <include location="sources.qrc"/>
+  <include location="../sources.qrc"/>
  </resources>
  <connections/>
 </ui>

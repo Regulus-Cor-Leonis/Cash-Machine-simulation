@@ -39,6 +39,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+//pushbutton Exit
 void MainWindow::on_pushButton_clicked()
 {
     ExitMessage *w = new ExitMessage;
@@ -46,6 +47,7 @@ void MainWindow::on_pushButton_clicked()
     w->show();
 }
 
+//pushbutton Withdraw Funds
 void MainWindow::on_pushButton_2_clicked()
 {
     WithdrawFunds *w = new WithdrawFunds;
@@ -55,6 +57,7 @@ void MainWindow::on_pushButton_2_clicked()
     this->close();
 }
 
+//pushbutton Admin Panel
 void MainWindow::on_pushButton_3_clicked()
 {
     Password *w = new Password;

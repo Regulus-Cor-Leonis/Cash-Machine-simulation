@@ -14,6 +14,7 @@ OutOfMoney::~OutOfMoney()
     delete ui;
 }
 
+//pushbutton Ok
 void OutOfMoney::on_pushButton_2_clicked()
 {
     this->close();
