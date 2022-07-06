@@ -52,7 +52,7 @@ void AdminPanel::on_pushButton_3_clicked()
         bool ok1,ok2;
         int den=ui->lineEdit->text().toInt(&ok1,10);
         int cnt=ui->lineEdit_2->text().toInt(&ok2,10);
-        if (ok1 && ok2){
+        if ((ok1) && (ok2) && (den>0) && (cnt>0)){
             cash.setDenomination(den);
             cash.setCount(cnt);
             db->insertBillsIntoDB(cash);
@@ -79,7 +79,7 @@ void AdminPanel::on_pushButton_4_clicked()
         int cnt=ui->lineEdit_2->text().toInt(&ok2,10);
         DB* db = DB::getInstance();
         Cash cash;
-        if (ok1 && ok2){
+        if ((ok1) && (ok2) && (den>0) && (cnt>0)){
             cash.setDenomination(den);
             cash.setCount(cnt);
             db->updateBillsInDB(cash);

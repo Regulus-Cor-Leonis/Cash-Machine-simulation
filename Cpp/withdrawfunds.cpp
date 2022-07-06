@@ -364,7 +364,7 @@ void WithdrawFunds::on_pushButton_7_clicked()
 {
     bool ok;
     int request=ui->lineEdit->text().toInt(&ok,10);
-    if (ok==false){
+    if ((ok==false)||(request<=0)){
         ReadError *w=new ReadError;
         w->setAttribute(Qt::WA_DeleteOnClose);
         w->show();
