@@ -10,11 +10,12 @@ void DB::dbConnect(QString hostName, QString databaseName){
     db.setDatabaseName(QString("DRIVER={SQL Server};"
                 "SERVER=%1;DATABASE=%2;Persist Security Info=true;")
               .arg(hostName, databaseName));
-    if (!db.open())
+    if (!db.open()){
         qDebug() << "can't connect to db";
         DatabaseError *w = new DatabaseError;
         w->setAttribute(Qt::WA_DeleteOnClose);
         w->show();
+    }
 }
 
 
